@@ -18070,3 +18070,15 @@
 .tp-main-menu ul li:last-child {
     margin-right: 0 !important;
 }
+
+@media only screen and (max-width: 767px) {
+    .tp-hero-area-two.pt-130 {
+        padding-top: 80px !important;
+    }
+    .tp-hero-section-box-four.pt-120 {
+        padding-top: 60px !important;
+    }
+    .tp-hero-section-box-four.pb-140 {
+        padding-bottom: 60px !important;
+    }
+}

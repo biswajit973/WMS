@@ -380,7 +380,7 @@ const HomePage = () => {
                                                 <i className="flaticon-clipboard"></i>
                                             </div>
                                             <div className="counter-text">
-                                                <span>1000+</span>
+                                                <span>1k+</span>
                                                 <p className="m-0">Development & Design Projects Delivered</p>
                                             </div>
                                         </div>
