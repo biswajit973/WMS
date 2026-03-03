@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-label="MUA Crystal Salon fallback preview">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2D1024"/>
+      <stop offset="100%" stop-color="#8E3A79"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="1000" cy="160" r="180" fill="#FFC0E6" opacity="0.2"/>
+  <circle cx="180" cy="700" r="220" fill="#FFC0E6" opacity="0.15"/>
+  <rect x="120" y="160" width="960" height="480" rx="28" fill="#FFFFFF" opacity="0.16"/>
+  <text x="160" y="360" fill="#FFFFFF" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="78" font-weight="700">MUA Crystal Salon</text>
+  <text x="160" y="430" fill="#EAF0FF" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="34" font-weight="500">muacrystalsalon.com</text>
+  <text x="160" y="530" fill="#FFFFFF" font-family="Poppins, Segoe UI, Arial, sans-serif" font-size="24" opacity="0.9">Live preview opens in a new tab</text>
+</svg>

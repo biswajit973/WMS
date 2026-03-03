@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-labelledby="title desc">
+  <title id="title">SoftwareStudios Logo</title>
+  <desc id="desc">Text logo for SoftwareStudios in white theme.</desc>
+  <text x="0" y="42" font-family="Poppins, Montserrat, Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.4" fill="#FFFFFF">Software</text>
+  <text x="154" y="42" font-family="Poppins, Montserrat, Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.4" fill="#5ED3FF">Studios</text>
+  <rect x="2" y="50" width="116" height="3" rx="1.5" fill="#5ED3FF" opacity="0.95" />
+</svg>

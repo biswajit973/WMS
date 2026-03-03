@@ -1,0 +1,17 @@
+.tp-main-menu ul {
+    white-space: nowrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.tp-main-menu ul li {
+    display: inline-block;
+    margin-right: 30px !important;
+    position: relative;
+    list-style: none;
+}
+.tp-main-menu ul li:last-child {
+    margin-right: 0 !important;
+}

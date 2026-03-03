@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a9f6e;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#168f5e;stop-opacity:1"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg)"/>
+  <text x="300" y="180" font-family="Arial, sans-serif" font-weight="bold" font-size="52" fill="white" text-anchor="middle">₮ Tether</text>
+  <text x="300" y="230" font-family="Arial, sans-serif" font-size="18" fill="rgba(255,255,255,0.8)" text-anchor="middle">Digital Currency for the Digital Age</text>
+  <text x="300" y="270" font-family="Arial, sans-serif" font-size="14" fill="rgba(255,255,255,0.6)" text-anchor="middle">tether.to</text>
+</svg>
