@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" role="img" aria-labelledby="title desc">
+  <title id="title">SoftwareStudios Logo</title>
+  <desc id="desc">Text logo for SoftwareStudios in blue theme.</desc>
+  <defs>
+    <linearGradient id="softBlue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#175CFF" />
+      <stop offset="100%" stop-color="#00A9FF" />
+    </linearGradient>
+  </defs>
+  <text x="0" y="42" font-family="Poppins, Montserrat, Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.4" fill="url(#softBlue)">Software</text>
+  <text x="154" y="42" font-family="Poppins, Montserrat, Segoe UI, Arial, sans-serif" font-size="34" font-weight="700" letter-spacing="0.4" fill="#0F1E4A">Studios</text>
+  <rect x="2" y="50" width="116" height="3" rx="1.5" fill="#175CFF" opacity="0.9" />
+</svg>

@@ -1,0 +1,465 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+<style>
+   .highlight-card {
+      height: 100%;
+      border: 1px solid #e5e9f2;
+      border-radius: 20px;
+      overflow: hidden;
+      background: var(--tp-common-white);
+      box-shadow: 0 4px 25px rgba(31, 43, 84, 0.08);
+      transition: all 0.3s ease;
+   }
+
+   .highlight-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 45px rgba(31, 43, 84, 0.14);
+   }
+
+   .highlight-preview {
+      height: 220px;
+      background: #f5f8ff;
+      border-bottom: 1px solid #e5e9f2;
+      overflow: hidden;
+      position: relative;
+   }
+
+   .highlight-preview iframe {
+      border: 0;
+      width: 136%;
+      height: 136%;
+      transform: scale(0.735);
+      transform-origin: 0 0;
+      pointer-events: none;
+   }
+
+   .highlight-preview-fallback {
+      width: 100%;
+      height: 100%;
+      display: block;
+      position: relative;
+      color: #15224f;
+   }
+
+   .highlight-fallback-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+   }
+
+   .highlight-preview-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      text-align: center;
+      padding: 18px;
+      background: linear-gradient(180deg, rgba(10, 19, 46, 0.08) 15%, rgba(10, 19, 46, 0.72) 100%);
+      color: #ffffff;
+   }
+
+   .highlight-preview-overlay strong {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.3;
+   }
+
+   .highlight-preview-overlay span {
+      font-size: 13px;
+      color: #dce6ff;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+   }
+
+   .highlight-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px;
+   }
+
+   .highlight-logo {
+      width: 52px;
+      height: 52px;
+      min-width: 52px;
+      border-radius: 14px;
+      border: 1px solid #dbe5fa;
+      background: #eef4ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .highlight-logo img {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+   }
+
+   .highlight-copy h5 {
+      font-size: 21px;
+      margin-bottom: 2px;
+      line-height: 1.2;
+   }
+
+   .highlight-copy h5 a:hover {
+      color: var(--tp-theme-1);
+   }
+
+   .highlight-copy p {
+      margin: 0;
+      font-size: 14px;
+      color: #6f7892;
+      font-family: var(--tp-ff-mono);
+      word-break: break-word;
+   }
+
+   .highlight-visit {
+      margin-left: auto;
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: 50%;
+      border: 1px solid #dce5fa;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #5b6786;
+      transition: 0.3s;
+   }
+
+   .highlight-visit:hover {
+      color: var(--tp-common-white);
+      background-color: var(--tp-theme-1);
+      border-color: var(--tp-theme-1);
+   }
+
+   @media (max-width: 767px) {
+      .highlight-preview {
+         height: 190px;
+      }
+
+      .highlight-copy h5 {
+         font-size: 18px;
+      }
+   }
+</style>
+   <div id="header-sticky-mobile" class="tp-md-header-area d-md-block d-lg-none pt-30 pb-30">
+      <div class="container-fluid">
+         <div class="row align-items-center">
+            <div class="col-md-6 col-6">
+               <div class="tp-logo">
+                  <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+               </div>
+            </div>
+            <div class="col-md-6 col-6">
+               <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                  <a class="tp-btn-yellow d-none d-md-block" href="#">How it Works</a>
+                  <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="{% url 'index' %}">
+               <img src="{% static 'img/logo/logo-text-white.svg' %}" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
+
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Hyderabad, Telangana 500004, IN</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:+919063677927">+91 90636 77927</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></li>
+            </ul>
+         </div>
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb area start -->
+      <section class="breadcrumb__area  breadcrumb__pt-310 include-bg p-relative"
+         data-background="{% static 'img/breadcrum/ab-1.1.jpg' %}">
+         <div class="ac-about-shape-img z-index-1">
+            <img src="{% static 'img/breadcrum/ab-shape-1.1.jpg' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content p-relative z-index-1">
+                     <h3 class="breadcrumb__title">Our Work</h3>
+                     <a href="{% url 'contact' %}" class="tp-btn-white-border">Lets work together <i class="far fa-arrow-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- breadcrumb area end -->
+      <div class="corporate-hero__area corporate-plr pt-50">
+         <div class="container">
+            <div class="row align-items-end">
+               <div class="col-xl-5 col-lg-6 corporate-hero__tablet-space">
+                  <div class="corporate-hero__section-box">
+                     <h3 class="corporate-hero-title wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">Tech Revolution</h3>
+                     <p class="wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">Over 10 years of expertise in the tech industry, delivering innovative solutions for modern challenges.</p>
+                 </div>
+                 
+                 
+                  {% comment %} <div class="corporate-hero__btn-box d-flex align-items-center wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".9s">
+                     <a class="corporate-btn mr-30" href="about-me.html">
+                        <span>About Collax <i class="far fa-arrow-right"></i></span>
+                     </a>
+                     <div class="corporate-hero__play-btn">
+                        <a class="popup-video" href="https://www.youtube.com/watch?v=Y3YxC1NIn7w"><i class="fal fa-play"></i></a>
+                     </div>
+                  </div> {% endcomment %}
+               </div>
+               <div class="col-xl-7 col-lg-6">
+                  <div class="corporate-hero__img-box p-relative">
+                     <div class="corporate-hero__main-img text-end">
+                        <img src="{% static 'img/hero/cp-hero-2.png' %}" alt="">
+                       
+                     </div>
+                     <div class="corporate-hero__sub-img d-none d-sm-block">
+                        <img src="{% static 'img/hero/cp-hero-1.png' %}" alt="">
+                        
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   <!-- project-area-start -->
+   <div class="tp-project-area pt-120 pb-120 p-relative">
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class="col-xl-8 col-lg-10">
+               <div class="tp-project-section-box text-center pb-35">
+                  <h5 class="tp-subtitle pb-10">Our Work</h5>
+                  <h2 class="tp-title-sm pb-10">Websites and Experiences We Build for Clients</h2>
+                  <p>Browse real client projects and see how SoftwareStudios delivers business-ready digital experiences.</p>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center">
+            <div class="col-12 text-center">
+               <div class="tp-project-tab-button masonary-menu mb-70">
+                  <button class="active" data-filter="*"><span>All</span></button>
+                  <button data-filter=".cat-featured"><span>Featured</span></button>
+                  <button data-filter=".cat-architecture"><span>Architecture</span></button>
+                  <button data-filter=".cat-health"><span>Healthcare</span></button>
+                  <button data-filter=".cat-commerce"><span>Commerce</span></button>
+                  <button data-filter=".cat-corporate"><span>Enterprise</span></button>
+               </div>
+            </div>
+         </div>
+         <div class="row grid gx-4 gy-4 port-space">
+            {% for item in highlights %}
+            <div class="col-xl-4 col-lg-6 col-md-6 grid-item {{ item.categories }}">
+               <article class="highlight-card mb-30">
+                  <div class="highlight-preview">
+                     {% if item.use_iframe %}
+                     <iframe src="{{ item.url }}" title="{{ item.name }} preview" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     {% else %}
+                     <a class="highlight-preview-fallback" href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                        {% if item.fallback_image %}
+                        <img class="highlight-fallback-image" src="{% static item.fallback_image %}" alt="{{ item.name }} fallback preview" loading="lazy">
+                        {% endif %}
+                        <div class="highlight-preview-overlay">
+                           <strong>{{ item.name }}</strong>
+                           <span>Preview Unavailable</span>
+                        </div>
+                     </a>
+                     {% endif %}
+                  </div>
+                  <div class="highlight-meta">
+                     <div class="highlight-logo">
+                        <img src="https://www.google.com/s2/favicons?domain={{ item.domain }}&sz=64" alt="{{ item.name }} logo" loading="lazy">
+                     </div>
+                     <div class="highlight-copy">
+                        <h5><a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">{{ item.name }}</a></h5>
+                        <p>{{ item.domain }}</p>
+                     </div>
+                     <a class="highlight-visit" href="{{ item.url }}" target="_blank" rel="noopener noreferrer" aria-label="Visit {{ item.name }}">
+                        <i class="far fa-arrow-right"></i>
+                     </a>
+                  </div>
+               </article>
+            </div>
+            {% endfor %}
+         </div>
+      </div>
+   </div>
+   <!-- project-area-end -->
+
+
+   </main>
+
+
+   <!-- footer-area-start -->
+
+   <footer>
+      <div class="tp-footer-area black-bg pt-130 pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title mb-30">
+                        <h3 class="footer-title">About SoftwareStudios</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-30">
+                        <p>An affordable way to elevate your business through a strong online presence. Harness technology to streamline operations and drive growth with ease and efficiency.</p>
+                    </div>
+                    
+                     <div class="tp-footer-widget__social-link">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-skype"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6 d-flex justify-content-lg-center">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Usefull Links</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="{% url 'service-3' %}">Case Studies</a></li>
+                           <li><a href="{% url 'testimonial' %}">Testimonials</a></li>
+                           <li><a href="{% url 'price' %}">Pricing</a></li>
+                           <li><a href="{% url 'job' %}">Careers</a></li>
+                           <li><a href="{% url 'contact' %}">Contact us</a></li>
+                           <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6">
+                  <div class="tp-footer-widget pl-20">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Others</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li> <a href="{% url 'product-details' %}">Product Details</a></li>
+                           <li><a href="{% url 'service-details' %}">Help</a></li>
+                           <li><a href="{% url 'job-details' %}">job details</a></li>
+                           <li><a href="{% url 'registration' %}">Sign up</a></li>
+                           <li><a href="{% url 'login' %}">Log in</a></li>
+                           <li><a href="{% url '404' %}">Errors</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Stay Updated!</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-55">
+                        <p>Be the first to know about our latest updates, promotions, and industry news. Subscribe to our newsletter and stay ahead!</p>
+                     </div>
+                     <div class="tp-footer-widget__input">
+                        <form action="#">
+                           <input type="email" placeholder="Enter your email" required>
+                           <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+
+         <div class="tp-copyright-area">
+            <div class="container">
+               <div class="copyright-border pt-40">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-left text-lg-start text-start text-md-center">
+                           <p> © Copyright ©2024 Kozy Kreative Concept. All Rights Reserved Copyright</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-right text-start text-md-center text-lg-end">
+                           <a href="#">Terms and conditions</a>
+                           <a href="#"> Privacy policy</a>
+                           <a href="#">Login / Signup</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- footer-area-end -->
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+   <!-- JS here -->
+   <script src="{% static 'js/jquery.js' %}"></script>
+   <script src="{% static 'js/waypoints.js' %}"></script>
+   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'js/swiper-bundle.js' %}"></script>
+   <script src="{% static 'js/slick.js' %}"></script>
+   <script src="{% static 'js/magnific-popup.js' %}"></script>
+   <script src="{% static 'js/counterup.js' %}"></script>
+   <script src="{% static 'js/wow.js' %}"></script>
+   <script src="{% static 'js/meanmenu.js' %}"></script>
+   <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+   <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+   <script src="{% static 'js/ajax-form.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}

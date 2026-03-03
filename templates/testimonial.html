@@ -1,0 +1,410 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+   
+      <div id="header-sticky-mobile" class="tp-md-header-area d-md-block d-lg-none pt-30 pb-30">
+         <div class="container-fluid">
+            <div class="row align-items-center">
+               <div class="col-md-6 col-6">
+                  <div class="tp-logo">
+                     <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+                  </div>
+               </div>
+               <div class="col-md-6 col-6">
+                  <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                     <a class="tp-btn-yellow d-none d-md-block" href="#">How it Works</a>
+                     <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   
+   
+   
+      <div class="tp-offcanvas-area">
+         <div class="tpoffcanvas">
+            <div class="tpoffcanvas__logo">
+               <a href="{% url 'index' %}">
+                  <img src="{% static 'img/logo/logo-text-white.svg' %}" alt="">
+               </a>
+            </div>
+            <div class="tpoffcanvas__close-btn">
+               <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+            </div>
+            <div class="tpoffcanvas__content d-none d-sm-block">
+               <p>We deploy world-class Creative <br> on demand.</p>
+            </div>
+            <div class="mobile-menu">
+   
+            </div>
+            <div class="tpoffcanvas__contact">
+               <span>Contact us</span>
+               <ul>
+                  <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Hyderabad, Telangana 500004, IN</a></li>
+                  <li><i class="fas fa-star"></i> <a href="tel:+919063677927">+91 90636 77927</a></li>
+                  <li><i class="fas fa-star"></i> <a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></li>
+               </ul>
+            </div>
+            <div class="tpoffcanvas__input d-none d-sm-block">
+               <p>Get UPdate</p>
+               <form class="p-relative" action="#">
+                  <input type="text" placeholder="Enter mail">
+                  <button type="submit"><i class="fas fa-paper-plane"></i></button>
+               </form>
+            </div>
+            <div class="tpoffcanvas__instagram d-none d-sm-block">
+               <p>Check Instagram POst</p>
+              <div class="tp-insta">
+               <div class="row">
+                  <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+                  <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+                  <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+                  <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               </div>
+              </div>
+            </div>
+         </div>
+      </div>
+   
+      <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb area start -->
+      <section class="breadcrumb__area  breadcrumb__pt-310 include-bg p-relative"
+         data-background="{% static 'img/breadcrum/ab-1.1.jpg' %}">
+         <div class="ac-about-shape-img z-index-1">
+            <img src="{% static 'img/breadcrum/ab-shape-1.1.jpg' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content p-relative z-index-1">
+                     <h3 class="breadcrumb__title">Our Review</h3>
+                      <a href="{% url 'contact' %}" class="tp-btn-white-border">Lets work together <i class="far fa-arrow-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- breadcrumb area end -->
+
+
+      <!--testimonial-area-start -->
+     <!--testimonial-area-start -->
+<div class="tp-testimonial-area pt-130 pb-130 p-relative">
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-12 wow tpfadeUp" data-wow-duration="1s" data-wow-delay=".3s">
+            <div class="swiper-slide">
+               <div class="tp-testimonial-item-four testimonial-html-space mb-30">
+                  <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                     <div class="tp-testimonial-item-four__logo">
+                        <a href=""><img src="{% static 'img/testimonial/testi-brands-1.png' %}" alt=""></a>
+                     </div>
+                     <div class="tp-testimonial-item-four__rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                     </div>
+                  </div>
+                  <div class="tp-testi-paragraph pb-40">
+                     <p>"Working with SoftwareStudios has been a game-changer for our business. They developed our web app from the ground up and ensured that every feature was aligned with our vision. The team's dedication to ensuring every detail was perfect is what sets them apart." </p>
+                  </div>
+                  <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                     <div class="mr-20">
+                        <img src="{% static 'img/testimonial/testi-4.2.png' %}" alt="">
+                     </div>
+                     <div class="tp-testimonial-item-four__position">
+                        <h4 class="m-0">Amit Sharma</h4>
+                        <span>Founder, E-commerce Platform (India)</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-12 wow tpfadeUp" data-wow-duration="1s" data-wow-delay=".5s">
+            <div class="swiper-slide">
+               <div class="tp-testimonial-item-four testimonial-html-space mb-30">
+                  <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                     <div class="tp-testimonial-item-four__logo">
+                        <a href=""><img src="{% static 'img/testimonial/testi-brands-2.png' %}" alt=""></a>
+                     </div>
+                     <div class="tp-testimonial-item-four__rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                     </div>
+                  </div>
+                  <div class="tp-testi-paragraph pb-40">
+                     <p>"The AI solution SoftwareStudios provided revolutionized the way we handle bookings on our platform. Their team's technical expertise, combined with an in-depth understanding of our industry, made this project a success." </p>
+                  </div>
+                  <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                     <div class="mr-20">
+                        <img src="{% static 'img/testimonial/testi-4.5.png' %}" alt="">
+                     </div>
+                     <div class="tp-testimonial-item-four__position">
+                        <h4 class="m-0">Ahmed Al-Farsi</h4>
+                        <span>CEO, Booking Solutions (Dubai)</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-12 wow tpfadeUp" data-wow-duration="1s" data-wow-delay=".7s">
+            <div class="swiper-slide">
+               <div class="tp-testimonial-item-four testimonial-html-space mb-30">
+                  <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                     <div class="tp-testimonial-item-four__logo">
+                        <a href=""><img src="{% static 'img/testimonial/testi-brands-2.png' %}" alt=""></a>
+                     </div>
+                     <div class="tp-testimonial-item-four__rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                     </div>
+                  </div>
+                  <div class="tp-testi-paragraph pb-40">
+                     <p>"SoftwareStudios's LMS solution has empowered our students and educators alike. The platform is easy to use, and their team's responsiveness ensured we launched on time with zero issues." </p>
+                  </div>
+                  <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                     <div class="mr-20">
+                        <img src="{% static 'img/testimonial/testi-4.1.png' %}" alt="">
+                     </div>
+                     <div class="tp-testimonial-item-four__position">
+                        <h4 class="m-0">Sushila Rana</h4>
+                        <span>EdTech Entrepreneur (Nepal)</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-12 wow tpfadeUp" data-wow-duration="1s" data-wow-delay=".9s">
+            <div class="swiper-slide">
+               <div class="tp-testimonial-item-four testimonial-html-space mb-30">
+                  <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                     <div class="tp-testimonial-item-four__logo">
+                        <a href=""><img src="{% static 'img/testimonial/testi-brands-2.png' %}" alt=""></a>
+                     </div>
+                     <div class="tp-testimonial-item-four__rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                     </div>
+                  </div>
+                  <div class="tp-testi-paragraph pb-40">
+                     <p>"Our e-commerce platform now runs seamlessly thanks to SoftwareStudios. From payment integration to backend management, every aspect has been tailored to our exact needs. We couldn’t be happier." </p>
+                  </div>
+                  <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                     <div class="mr-20">
+                        <img src="{% static 'img/testimonial/testi-4.6.png' %}" alt="">
+                     </div>
+                     <div class="tp-testimonial-item-four__position">
+                        <h4 class="m-0">Tashi Dorji</h4>
+                        <span>Founder, Retail Tech (Bhutan)</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="col-xl-12 wow tpfadeUp" data-wow-duration="1s" data-wow-delay="1.1s">
+            <div class="swiper-slide">
+               <div class="tp-testimonial-item-four testimonial-html-space mb-30">
+                  <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                     <div class="tp-testimonial-item-four__logo">
+                        <a href=""><img src="{% static 'img/testimonial/testi-brands-2.png' %}" alt=""></a>
+                     </div>
+                     <div class="tp-testimonial-item-four__rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                     </div>
+                  </div>
+                  <div class="tp-testi-paragraph pb-40">
+                     <p>"Thanks to SoftwareStudios, our digital marketing campaigns now reach thousands of customers every day. Their strategies are innovative, and the results speak for themselves." </p>
+                  </div>
+                  <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                     <div class="mr-20">
+                        <img src="{% static 'img/testimonial/testi-4.7.png' %}" alt="">
+                     </div>
+                     <div class="tp-testimonial-item-four__position">
+                        <h4 class="m-0">Ritika Iyer</h4>
+                        <span>Marketing Head, Fashion Brand (India)</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--testimonial-area-end-->
+   
+
+      <!-- testimonial-area-end -->
+
+      <!-- news-area-start -->
+      <div class="tp-news-letter-area tp-news-letter-bg pt-200 pb-150" data-background="{% static 'img/news/news-bg.jpg' %}">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-xl-8 col-lg-8 col-md-12">
+                  <div class="tp-news-sub-wrapper text-center">
+                     <div class="tp-news-letter-section-box">
+                        <h2 class="tp-title-sm tp-title-sm tp-white-text pb-30">Launch Your Vision with SoftwareStudios</h2>
+                        <p class="text-white pb-35">From solving complex challenges to turning innovative ideas into reality, we thrive on creating tailored solutions for businesses of all kinds. Whether you're in Fintech, Health, Big Data, or beyond – we’re here to help your brand soar.</p>
+                     </div>
+                     <div class="tp-news-button">
+                        <a class="tp-btn-lg-yellow" href="{% url 'contact' %}">Partner with Us</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- news-area-end -->
+
+   </main>
+
+
+   <!-- footer-area-start -->
+
+   <footer>
+      <div class="tp-footer-area black-bg pt-130 pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__logo mb-30">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-white.svg' %}" alt=""></a>
+                     </div>
+                     <div class="tp-footer-widget__text mb-30">
+                        <p>An affordable way to elevate your business through a strong online presence. Harness technology to streamline operations and drive growth with ease and efficiency.</p>
+                    </div>
+                    
+                     <div class="tp-footer-widget__social-link">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-skype"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6 d-flex justify-content-lg-center">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Usefull Links</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="{% url 'service-3' %}">Case Studies</a></li>
+                           <li><a href="{% url 'testimonial' %}">Testimonials</a></li>
+                           <li><a href="{% url 'price' %}">Pricing</a></li>
+                           <li><a href="{% url 'job' %}">Careers</a></li>
+                           <li><a href="{% url 'contact' %}">Contact us</a></li>
+                           <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6">
+                  <div class="tp-footer-widget pl-20">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Others</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li> <a href="{% url 'product-details' %}">Product Details</a></li>
+                           <li><a href="{% url 'service-details' %}">Help</a></li>
+                           <li><a href="{% url 'job-details' %}">job details</a></li>
+                           <li><a href="{% url 'registration' %}">Sign up</a></li>
+                           <li><a href="{% url 'login' %}">Log in</a></li>
+                           <li><a href="{% url '404' %}">Errors</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Stay Updated!</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-55">
+                        <p>Be the first to know about our latest updates, promotions, and industry news. Subscribe to our newsletter and stay ahead!</p>
+                     </div>
+                     <div class="tp-footer-widget__input">
+                        <form action="#">
+                           <input type="email" placeholder="Enter your email" required>
+                           <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+
+         <div class="tp-copyright-area">
+            <div class="container">
+               <div class="copyright-border pt-40">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-left text-lg-start text-start text-md-center">
+                           <p> © Copyright ©2024 Kozy Kreative Concept. All Rights Reserved Copyright</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-right text-start text-md-center text-lg-end">
+                           <a href="#">Terms and conditions</a>
+                           <a href="#"> Privacy policy</a>
+                           <a href="#">Login / Signup</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- footer-area-end -->
+
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+   <!-- JS here -->
+   <script src="{% static 'js/jquery.js' %}"></script>
+   <script src="{% static 'js/waypoints.js' %}"></script>
+   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'js/swiper-bundle.js' %}"></script>
+   <script src="{% static 'js/slick.js' %}"></script>
+   <script src="{% static 'js/magnific-popup.js' %}"></script>
+   <script src="{% static 'js/counterup.js' %}"></script>
+   <script src="{% static 'js/wow.js' %}"></script>
+   <script src="{% static 'js/meanmenu.js' %}"></script>
+   <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+   <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+   <script src="{% static 'js/ajax-form.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}

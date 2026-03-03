@@ -1,0 +1,399 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+   <div id="header-sticky-mobile" class="tp-md-header-area d-md-block d-lg-none pt-30 pb-30">
+      <div class="container-fluid">
+         <div class="row align-items-center">
+            <div class="col-md-6 col-6">
+               <div class="tp-logo">
+                  <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+               </div>
+            </div>
+            <div class="col-md-6 col-6">
+               <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                  <a class="tp-btn-yellow d-none d-md-block" href="#">How it Works</a>
+                  <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="{% url 'index' %}">
+               <img src="{% static 'img/logo/logo-text-white.svg' %}" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
+
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Hyderabad, Telangana 500004, IN</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:+919063677927">+91 90636 77927</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></li>
+            </ul>
+         </div>
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb area start -->
+      <section class="breadcrumb__area  breadcrumb__pt-310 include-bg p-relative"
+         data-background="{% static 'img/breadcrum/ab-1.1.jpg' %}">
+         <div class="ac-about-shape-img z-index-1">
+            <img src="{% static 'img/breadcrum/ab-shape-1.1.jpg' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content p-relative z-index-1">
+                     <h3 class="breadcrumb__title">Portfolio 2 Columns</h3>
+                      <a href="{% url 'contact' %}" class="tp-btn-white-border">Lets work together <i class="far fa-arrow-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- breadcrumb area end -->
+
+      <!-- project-area-start -->
+      <div class="tp-project-area pt-120 pb-120 p-relative">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-12">
+                  <div class="project-section-box-two text-center">
+                     <h5 class="tp-subtitle">Complete Project</h5>
+                     <h2 class="tp-title">Creative work.</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row justify-content-center mb-80">
+               <div class="col-10 p-0 text-center">
+                  <div class="tp-project-tab-button masonary-menu">
+                     <button class="active" data-filter="*"><span>All</span></button>
+                     <button data-filter=".cat2"><span>Website</span></button>
+                     <button data-filter=".cat3"><span>Landing Page</span></button>
+                     <button data-filter=".cat4"><span>ios App</span></button>
+                     <button data-filter=".cat5"><span>Branding Design</span></button>
+                  </div>
+               </div>
+            </div>
+            <div class="row grid gx-45">
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat1 cat3">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                    <div class="portfolio-thumb fix">
+                       <img class=" w-100" src="{% static 'img/portfolio/port-11.jpg' %}" alt="">
+                    </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-11.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat5 cat4">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-10.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-10.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat5 cat2">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-14.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-14.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat1 cat3 cat4">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-13.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-13.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat2 cat5">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-12.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-12.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat2 cat4">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-15.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-15.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat2 cat65 cat3">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-16.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-16.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat1 cat2">
+                  <div class="tp-project-item-two p-relative mb-45 fix">
+                     <div class="portfolio-thumb fix">
+                        <img class=" w-100" src="{% static 'img/portfolio/port-17.jpg' %}" alt="">
+                     </div>
+                     <div class="tp-portfolio-content-box">
+                        <h3 class="portfolio-animation-title"><a href="{% url 'portfolio-details' %}">Hosting Website</a></h3>
+                        <span>Ui/Ux Design</span>
+                     </div>
+                     <div class="portfolio-animation-icon">
+                       <a class="popup-image" href="{% static 'img/portfolio/port-17.jpg' %}"> 
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0.0840454 35.6872L4.24586 39.8578C4.43505 40.0474 5.57016 40.0474 5.75926 39.8578L29.9737 16.1611C30.352 15.7819 30.7304 15.5923 31.2979 15.5923C31.4871 15.5923 31.8655 15.5923 32.0546 15.7819C32.8113 15.9715 33.1896 16.7298 33.1896 17.488V29.4313V29.6209H39.2433C39.6216 29.6209 39.8109 29.6209 40 29.6209V0.616144C40 0.616144 40 0.616144 39.6217 0.23695C39.2434 -0.142245 39.4326 0.047446 39.0541 0.047446H10.6779C10.6779 0.23695 10.6779 0.426547 10.6779 0.995338V6.87201C10.6779 7.25111 10.6779 7.6303 10.6779 7.6303H22.7851C23.5418 7.6303 24.2985 8.0094 24.4876 8.7677C24.8659 9.52599 24.6768 10.2843 24.1093 10.8531L0.462448 34.3602C0.273251 34.5498 0.0840454 34.7394 0.0840454 35.1185C-0.105061 35.4976 0.0840454 35.4976 0.0840454 35.6872Z" fill="currentColor"/>
+                        </svg>
+                     </a>                           
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-12">
+                  <div class="tp-project-button text-center mt-25">
+                     <a class="tp-btn-yellow" href="#">Lode more</a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- project-area-end -->
+
+
+   </main>
+
+
+   <!-- footer-area-start -->
+
+   <footer>
+      <div class="tp-footer-area black-bg pt-130 pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__logo mb-30">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-white.svg' %}" alt=""></a>
+                     </div>
+                     <div class="tp-footer-widget__text mb-30">
+                        <p>A new way to make the payments easy,
+                           reliable and 100% secure. claritatem itamconse quat. Exerci tationulla</p>
+                     </div>
+                     <div class="tp-footer-widget__social-link">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-skype"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6 d-flex justify-content-lg-center">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Usefull Links</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="{% url 'service-3' %}">Case Studies</a></li>
+                           <li><a href="{% url 'testimonial' %}">Testimonials</a></li>
+                           <li><a href="{% url 'price' %}">Pricing</a></li>
+                           <li><a href="{% url 'job' %}">Careers</a></li>
+                           <li><a href="{% url 'contact' %}">Contact us</a></li>
+                           <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6">
+                  <div class="tp-footer-widget pl-20">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Community</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Help Center</a></li>
+                           <li><a href="#">Partners</a></li>
+                           <li><a href="#">Suggestions</a></li>
+                           <li><a href="{% url 'blog' %}">Blog</a></li>
+                           <li><a href="#">Newsletters</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Subscribe Newslatter</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-55">
+                        <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo</p>
+                     </div>
+                     <div class="tp-footer-widget__input">
+                        <form action="#">
+                           <input type="text" placeholder="Enter Mail">
+                           <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="tp-copyright-area">
+            <div class="container">
+               <div class="copyright-border pt-40">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-left text-lg-start text-start text-md-center">
+                           <p> © Copyright ©2022 Collax. All Rights Reserved Copyright</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-right text-start text-md-center text-lg-end">
+                           <a href="#">Terms and conditions</a>
+                           <a href="#"> Privacy policy</a>
+                           <a href="#">Login / Signup</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- footer-area-end -->
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+
+   <!-- JS here -->
+   <script src="{% static 'js/jquery.js' %}"></script>
+   <script src="{% static 'js/waypoints.js' %}"></script>
+   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'js/swiper-bundle.js' %}"></script>
+   <script src="{% static 'js/slick.js' %}"></script>
+   <script src="{% static 'js/magnific-popup.js' %}"></script>
+   <script src="{% static 'js/counterup.js' %}"></script>
+   <script src="{% static 'js/wow.js' %}"></script>
+   <script src="{% static 'js/meanmenu.js' %}"></script>
+   <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+   <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+   <script src="{% static 'js/ajax-form.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}

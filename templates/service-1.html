@@ -1,0 +1,778 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+
+
+
+<style>
+   @media (max-width: 575.98px) {
+     .tp-hero-area {
+       padding-top: 20px;
+     }
+   }
+   </style>
+   
+
+   <div id="header-sticky-mobile" class="tp-md-header-area d-md-block d-lg-none pt-30 pb-30">
+      <div class="container-fluid">
+         <div class="row align-items-center">
+            <div class="col-md-6 col-6">
+               <div class="tp-logo">
+                  <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+               </div>
+            </div>
+            <div class="col-md-6 col-6">
+               <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                  <a class="tp-btn-yellow d-none d-md-block" href="#">How it Works</a>
+                  <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="{% url 'index' %}">
+               <img src="{% static 'img/logo/logo-text-white.svg' %}" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
+
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Hyderabad, Telangana 500004, IN</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:+919063677927">+91 90636 77927</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></li>
+            </ul>
+         </div>
+         
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb area start -->
+      {% comment %} <section class="breadcrumb__area  breadcrumb__pt-310 include-bg p-relative"
+         data-background="{% static 'img/breadcrum/ab-1.1.jpg' %}">
+         <div class="ac-about-shape-img">
+            <img src="{% static 'img/breadcrum/ab-shape-1.1.jpg' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content p-relative z-index-1">
+                     <h3 class="breadcrumb__title">Service 01</h3>
+                      <a href="{% url 'contact' %}" class="tp-btn-white-border">Lets work together <i class="far fa-arrow-right"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section> {% endcomment %}
+      <!-- breadcrumb area end -->
+      <div class="tp-hero-area tp-hero-space p-relative z-index-1 fix">
+         <div class="tp-hero-shape">
+            <div class="shape-circle-yellow d-none"></div>
+            <div class="shape-circle-blue"></div>
+            <div class="shape-one"><img src="{% static 'img/hero/shape-1.png' %}" alt=""></div>
+         </div>
+         <div class="tp-hero-wapper">
+            <div class="container">
+               <div class="row align-items-center">
+                  <div class="col-xl-7 col-lg-7">
+                     <div class="tp-hero-content">
+                        <div class="tp-hero-text">
+                           <h2 class="tp-hero-title wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s"> Achieve More with Tech! 🚀 </h2>
+                           <p class="wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
+                               Ready to boost your business or move it online? <br>
+                               Want to automate with the latest tech and AI? Explore our services and connect with global tech experts—all from your place.
+                           </p>
+                         
+                       </div>
+                       
+                     </div>
+                  </div>
+                  <div class="col-xl-5 col-lg-5">
+                     <div class="tp-hero-big-img wow fadeInRight"  data-wow-duration=".7s" data-wow-delay="1.2s">
+                        <img src="{% static 'img/hero/hero-2.png' %}" alt="">
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+ <!--service-area-start -->
+ <div class="tp-service-area tp-service-bs-space pt-130 pb-130 yellow-bg p-relative">
+   <div class="bp-sv-shape-1 d-none d-lg-block">
+      <img src="assets/img/chose/bp-chose-5.1.png" alt="">
+   </div>
+   <div class="bp-sv-shape-2 d-none d-lg-block">
+      <img src="assets/img/hero/hero-shape-5.2.png" alt="">
+   </div>
+   <div class="container">
+      <div class="row">
+         <div class="col-xl-4 col-lg-6 col-md-10">
+            <div class="tp-best-services-title-box">
+               <h5 class="tp-subtitle tp-subtitle-before-color">Our Specialisations</h5>
+               <h2 class="tp-title tp-title-sm">Grow you
+                  <span class="tp-section-highlight">
+                     business
+                     <svg width="170" height="12" viewBox="0 0 170 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 0L170 12H0V0Z" fill="#89CEFB"/>
+                     </svg>
+                  </span>
+                   with our best service</h2>
+            </div>
+            <div class="tp-sv-button">
+               <img src="assets/img/service/service-logo.png" alt="">
+            </div>
+         </div>
+         <div class="col-xl-8 col-lg-6 col-md-12 col-12">
+           <div class="tp-sv-space-wrapper">
+            <a href="">
+               <div class="bg-white-wrapper sv-border-top sv-border-bottom service-space">
+                  <div class="row align-items-center">
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tpservices__icon">
+                           <i class="flaticon-target"></i>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-6">
+                        <div class="tpservices">
+                           <div class="tpservices__content">
+                              <h5 class="tp-sv-bs-title">Business <br> Analysis</h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tp-services-best-item text-end">
+                           <div class="tpservices__icon">
+                              <div class="angle-right-svg">
+                                 <div class="angle-right"><svg width="18" height="33" viewBox="0 0 18 33"
+                                       fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <line x1="0.707107" y1="1.18181" x2="16.7071" y2="17.1818" stroke="black"
+                                          stroke-width="2" />
+                                       <line x1="1.07121" y1="31.4041" x2="15.2934" y2="17.1819" stroke="black"
+                                          stroke-width="2" />
+                                    </svg>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </a>
+            <a href="">
+               <div class="bg-white-wrapper sv-border-bottom service-space ">
+                  <div class="row align-items-center">
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tpservices__icon">
+                           <i class="flaticon-statistics"></i>
+                        </div>
+                     </div>
+                     <div class="col-xl-6  col-lg-6 col-6 ">
+                        <div class="tpservices">
+                           <div class="tpservices__content">
+                              <h5 class="tp-sv-bs-title">Marketing <br>Strategy</h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tp-services-best-item text-end">
+                           <div class="tpservices__icon">
+                              <div class="angle-right-svg">
+                                 <div class="angle-right"><svg width="18" height="33" viewBox="0 0 18 33"
+                                       fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <line x1="0.707107" y1="1.18181" x2="16.7071" y2="17.1818" stroke="black"
+                                          stroke-width="2" />
+                                       <line x1="1.07121" y1="31.4041" x2="15.2934" y2="17.1819" stroke="black"
+                                          stroke-width="2" />
+                                    </svg>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </a>
+            <a href="">
+               <div class="bg-white-wrapper sv-border-bottom service-space">
+                  <div class="row align-items-center">
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tpservices__icon">
+                           <i class="flaticon-coding"></i>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-6 ">
+                        <div class="tpservices">
+                           <div class="tpservices__content">
+                              <h5 class="tp-sv-bs-title">Design & <br>Development</h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tp-services-best-item text-end">
+                           <div class="tpservices__icon">
+                              <div class="angle-right-svg">
+                                 <div class="angle-right"><svg width="18" height="33" viewBox="0 0 18 33"
+                                       fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <line x1="0.707107" y1="1.18181" x2="16.7071" y2="17.1818" stroke="black"
+                                          stroke-width="2" />
+                                       <line x1="1.07121" y1="31.4041" x2="15.2934" y2="17.1819" stroke="black"
+                                          stroke-width="2" />
+                                    </svg>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </a>
+            <a href="">
+               <div class="bg-white-wrapper sv-border-bottom service-space">
+                  <div class="row align-items-center">
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tpservices__icon">
+                           <i class="flaticon-team"></i>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-6">
+                        <div class="tpservices">
+                           <div class="tpservices__content">
+                              <h5 class="tp-sv-bs-title">Business <br>
+                                 Consulting</h5>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-3 col-3">
+                        <div class="tp-services-best-item text-end">
+                           <div class="tpservices__icon">
+                              <div class="angle-right-svg">
+                                 <div class="angle-right"><svg width="18" height="33" viewBox="0 0 18 33"
+                                       fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <line x1="0.707107" y1="1.18181" x2="16.7071" y2="17.1818" stroke="black"
+                                          stroke-width="2" />
+                                       <line x1="1.07121" y1="31.4041" x2="15.2934" y2="17.1819" stroke="black"
+                                          stroke-width="2" />
+                                    </svg>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </a>
+           </div>
+         </div>
+      </div>
+   </div>
+</div>
+<!--service-area-end -->
+
+
+
+       <!--service-area-start -->
+       <div class="tp-service-area pt-110 pb-130">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
+                  <div class="tp-sv-border-effect">
+                     <div class="tp-service-item-four sv-1-border sv-color-1 mb-30">
+                        <div class="tp-service-item-four__img  mb-40">
+                           <img src="{% static 'img/service/007-email.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">Desktop App Development</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".7s">
+                  <div class="tp-sv-border-effect sv-border-effect-1">
+                     <div class="tp-service-item-four sv-1-border sv-color-2 mb-30">
+                        <div class="tp-service-item-four__img  mb-40">
+                           <img src="{% static 'img/service/service4.1.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">Web and  mobile app Development</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".9s">
+                  <div class="tp-sv-border-effect sv-border-effect-2">
+                     <div class="tp-service-item-four sv-1-border sv-color-3 mb-30">
+                        <div class="tp-service-item-four__img mb-40">
+                           <img src="{% static 'img/service/service4.2.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">E-commerce Setup</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
+                  <div class="tp-sv-border-effect sv-border-effect-3">
+                     <div class="tp-service-item-four sv-1-border sv-color-4 mb-30">
+                        <div class="tp-service-item-four__img mb-40">
+                           <img src="{% static 'img/service/service4.3.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">
+                              Content Creation</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.1s">
+                  <div class="tp-sv-border-effect sv-border-effect-4">
+                     <div class="tp-service-item-four sv-1-border sv-color-5 mb-30">
+                        <div class="tp-service-item-four__img mb-40">
+                           <img src="{% static 'img/service/service4.4.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">Designing and
+                                 Branding</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.2s">
+                  <div class="tp-sv-border-effect sv-border-effect-5">
+                     <div class="tp-service-item-four sv-1-border sv-color-6 mb-30">
+                        <div class="tp-service-item-four__img mb-40">
+                           <img src="{% static 'img/service/service4.5.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">Digital Marketing
+                                 </a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.3s">
+                  <div class="tp-sv-border-effect sv-border-effect-6">
+                     <div class="tp-service-item-four sv-1-border sv-color-7 mb-30">
+                        <div class="tp-service-item-four__img mb-40">
+                           <img src="{% static 'img/service/service4.6.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">AI/ML Solutions</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay="1.3s">
+                  <div class="tp-sv-border-effect">
+                     <div class="tp-service-item-four sv-1-border sv-color-1 mb-30">
+                        <div class="tp-service-item-four__img  mb-40">
+                           <img src="{% static 'img/service/007-email.png' %}" alt="">
+                        </div>
+                        <div class="tp-service-item-four__title">
+                           <h3 class="tp-sv-sm-title"><a href="{% url 'service-details' %}">AI Agents & Automation</a></h3>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+
+        <!-- accordion-area-start -->
+        <div class="sd-accordio-area grey-bg pt-110 pb-110">
+         <div class="container">
+             <div class="row">
+                 <div class="col-xl-7">
+                     <h3 class="tp-title-sm mb-90">Solutions: All Your Questions Answered</h3>
+                 </div>
+             </div>
+             <div class="row">
+                 <div class="col-xl-12">
+                     <div class="tp-custom-accordio">
+                         <div class="accordion" id="accordionExample">
+                             <div class="accordion-items faq-accordio-border">
+                                 <h2 class="accordion-header" id="headingOne">
+                                     <button class="accordion-buttons" type="button" data-bs-toggle="collapse"
+                                         data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                         Is my data safe?
+                                     </button>
+                                 </h2>
+                                 <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                                     data-bs-parent="#accordionExample">
+                                     <div class="accordion-body">
+                                         Absolutely! We prioritize your data security with top-notch encryption and secure servers. 
+                                         All credentials are kept confidential and are solely in your control. Your safety is our top priority.
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="accordion-items">
+                                 <h2 class="accordion-header" id="headingTwo">
+                                     <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse"
+                                         data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                         How does the 7-day free trial work?
+                                     </button>
+                                 </h2>
+                                 <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                     data-bs-parent="#accordionExample">
+                                     <div class="accordion-body">
+                                         Our 7-day free trial allows you to experience our services risk-free. If you are not completely satisfied within this period, you can opt for a 100% money-back guarantee.
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="accordion-items">
+                                 <h2 class="accordion-header" id="headingThree">
+                                     <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse"
+                                         data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                         What happens after my free trial?
+                                     </button>
+                                 </h2>
+                                 <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                                     data-bs-parent="#accordionExample">
+                                     <div class="accordion-body">
+                                         After your free trial, if you choose to continue, you will have access to a dedicated manager who simplifies technical details for you, 24/7 support, and one year of free service.
+                                     </div>
+                                 </div>
+                             </div>
+                             <div class="accordion-items">
+                                 <h2 class="accordion-header" id="headingFour">
+                                     <button class="accordion-buttons collapsed" type="button" data-bs-toggle="collapse"
+                                         data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                         What makes our service stand out?
+                                     </button>
+                                 </h2>
+                                 <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                     data-bs-parent="#accordionExample">
+                                     <div class="accordion-body">
+                                         We offer customized solutions tailored to your needs, free hosting for your webpages, and a dedicated manager who ensures all technical aspects are made easy for you. Our commitment to exceptional service sets us apart.
+                                     </div>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+             <div class="row mt-50">
+                 <div class="col-12 text-center">
+                     <p>Ready to start? Click on our <a href="{% url 'contact' %}">Let's Talk</a> page or send us your query directly. You can also call our team for immediate assistance!</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+     
+      <!-- accordion-area-end -->
+
+      <!--testimonial-area-start -->
+      <div class="tp-testimonial-area pb-120 pt-50 p-relative">
+         <div class="bs-testi-shape-1 d-none d-lg-block">
+            <img src="{% static 'img/testimonial/testimonial-shape-5.3.png' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-12">
+                  <div class="tp-testi-wrapper d-flex pb-50 justify-content-between align-items-end">
+                     <div class="tp-testimonial-title-box ">
+                        <h5 class="tp-subtitle">Testimonial</h5>
+                        <h2 class="tp-title-sm">Check what client say</h2>
+                     </div>
+                     <div class="tp-testi-button-right-side">
+                        <a class="tp-btn-yellow" href="{% url 'testimonial' %}">More Testimonial</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="tp-testimonial-slider-section-four">
+               <div class="swiper-container testi-slider-active-five ">
+                  <div class="swiper-wrapper">
+                     <div class="swiper-slide">
+                        <div class="tp-testimonial-item-four">
+                           <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                              <div class="tp-testimonial-item-four__logo">
+                                 <a href=""><img src="{% static 'img/testimonial/testi-brands-1.png' %}" alt="Dr. Soumya Sharma"></a>
+                              </div>
+                              <div class="tp-testimonial-item-four__rating">
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                              </div>
+                           </div>
+                           <div class="tp-testi-paragraph pb-40">
+                              <p>Partnering with SoftwareStudios was transformative for my dental practice. The social media marketing services  were top-notch, boosting our visibility and patient engagement significantly.</p>
+                           </div>
+                           <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                              <div class="mr-20">
+                                 <img src="{% static 'img/testimonial/testi-4.2.png' %}" alt="Dr. Soumya Sharma">
+                              </div>
+                              <div class="tp-testimonial-item-four__position">
+                                 <h4 class="m-0">Dr. Soujanya Nanda</h4>
+                                 <span>Dentist, Indore</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="swiper-slide">
+                        <div class="tp-testimonial-item-four">
+                           <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                              <div class="tp-testimonial-item-four__logo">
+                                 <a href=""><img src="{% static 'img/testimonial/testi-brands-2.png' %}" alt="Car Rental Dubai"></a>
+                              </div>
+                              <div class="tp-testimonial-item-four__rating">
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                              </div>
+                           </div>
+                           <div class="tp-testi-paragraph pb-40">
+                              <p>SoftwareStudios took our Dubai car rental business to the next level! Their web app made license checks and bookings a breeze. Top-notch service!</p>
+                           </div>
+                           <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                              <div class="mr-20">
+                                 <img src="{% static 'img/testimonial/testi-4.5.png' %}" alt="Car Rental Dubai">
+                              </div>
+                              <div class="tp-testimonial-item-four__position">
+                                 <h4 class="m-0">Ahmed Al Farsi</h4>
+                                 <span>Owner, Dubai Car Rentals</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                     <div class="swiper-slide">
+                        <div class="tp-testimonial-item-four">
+                           <div class="tp-testimonial-item-four__meta d-flex justify-content-between align-items-center mb-60">
+                              <div class="tp-testimonial-item-four__logo">
+                                 <a href=""><img src="{% static 'img/testimonial/testi-brands-3.png' %}" alt="Arundams Hotel and Parks"></a>
+                              </div>
+                              <div class="tp-testimonial-item-four__rating">
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                                 <span><i class="fas fa-star"></i></span>
+                              </div>
+                           </div>
+                           <div class="tp-testi-paragraph pb-40">
+                              <p>Incredible transformation! SoftwareStudios optimized our hotel operations and boosted online bookings. Their expertise is unmatched and they delivered beyond expectations.</p>
+                           </div>
+                           <div class="tp-testimonial-item-four__client d-flex align-items-center">
+                              <div class="mr-20">
+                                 <img src="{% static 'img/testimonial/testi-4.1.png' %}" alt="Arundams Hotel and Parks">
+                              </div>
+                              <div class="tp-testimonial-item-four__position">
+                                 <h4 class="m-0">Kajol Roy</h4>
+                                 <span>Manager, Arundams Hotel and Parks</span>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- testimonial-area-end -->
+
+      <!-- news-area-start -->
+      <div class="tp-news-letter-area tp-news-letter-bg pt-65 pb-60" data-background="{% static 'img/news/news-bg.jpg' %}">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-xl-7 col-lg-7 col-md-12 ">
+                  <div class="tp-news-sub-wrapper pr-50 wow tpfadeLeft" data-wow-duration=".3s" data-wow-delay=".6s">
+                     <div class="tp-news-letter-section-box">
+                        <h5 class="tp-subtitle subtitle-secondary-color">Stay Updated</h5>
+                        <h2 class="tp-title-sm tp-title-sm tp-white-text pb-25">Research-Based Solutions for 10+ Years</h2>
+                        <p class="tp-text-light">Our services and methodology are research-driven and continually refined over the past decade. We guarantee your satisfaction or your money back within 7 days.</p>
+                     </div>
+                     <div class="tp-news-button">
+                        <a class="tp-btn-lg-yellow mr-20" href="{% url 'contact' %}">Become a Partner</a>
+                        <a class="tp-btn-sky" href="{% url 'about' %}">Learn More</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-5 col-lg-5 col-md-12 wow tpfadeRight" data-wow-duration=".5s" data-wow-delay=".7s">
+                  <div class="tp-news-letter-img text-md-start text-lg-end pr-45">
+                     <img src="{% static 'img/news/news-7.1.png' %}" alt="Partner with Us">
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+
+      <!-- news-area-end -->
+
+
+   </main>
+
+
+   <!-- footer-area-start -->
+
+   <footer>
+      <div class="tp-footer-area black-bg pt-130 pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__logo mb-30">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-white.svg' %}" alt=""></a>
+                     </div>
+                     <div class="tp-footer-widget__text mb-30">
+                        <p>An affordable way to elevate your business through a strong online presence. Harness technology to streamline operations and drive growth with ease and efficiency.</p>
+                    </div>
+                    
+                     <div class="tp-footer-widget__social-link">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-skype"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6 d-flex justify-content-lg-center">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Usefull Links</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="{% url 'service-3' %}">Case Studies</a></li>
+                           <li><a href="{% url 'testimonial' %}">Testimonials</a></li>
+                           <li><a href="{% url 'price' %}">Pricing</a></li>
+                           <li><a href="{% url 'job' %}">Careers</a></li>
+                           <li><a href="{% url 'contact' %}">Contact us</a></li>
+                           <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6">
+                  <div class="tp-footer-widget pl-20">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Others</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li> <a href="{% url 'product-details' %}">Product Details</a></li>
+                           <li><a href="{% url 'service-details' %}">Help</a></li>
+                           <li><a href="{% url 'job-details' %}">job details</a></li>
+                           <li><a href="{% url 'registration' %}">Sign up</a></li>
+                           <li><a href="{% url 'login' %}">Log in</a></li>
+                           <li><a href="{% url '404' %}">Errors</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Stay Updated!</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-55">
+                        <p>Be the first to know about our latest updates, promotions, and industry news. Subscribe to our newsletter and stay ahead!</p>
+                     </div>
+                     <div class="tp-footer-widget__input">
+                        <form action="#">
+                           <input type="email" placeholder="Enter your email" required>
+                           <button type="submit"><i class="fas fa-paper-plane"></i> Subscribe</button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+               
+            </div>
+         </div>
+
+         <div class="tp-copyright-area">
+            <div class="container">
+               <div class="copyright-border pt-40">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-left text-lg-start text-start text-md-center">
+                           <p> © Copyright ©2024 Kozy Kreative Concept. All Rights Reserved Copyright</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-right text-start text-md-center text-lg-end">
+                           <a href="#">Terms and conditions</a>
+                           <a href="#"> Privacy policy</a>
+                           <a href="#">Login / Signup</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- footer-area-end -->
+
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+   <!-- JS here -->
+   <script src="{% static 'js/jquery.js' %}"></script>
+   <script src="{% static 'js/waypoints.js' %}"></script>
+   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'js/swiper-bundle.js' %}"></script>
+   <script src="{% static 'js/slick.js' %}"></script>
+   <script src="{% static 'js/magnific-popup.js' %}"></script>
+   <script src="{% static 'js/counterup.js' %}"></script>
+   <script src="{% static 'js/wow.js' %}"></script>
+   <script src="{% static 'js/meanmenu.js' %}"></script>
+   <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+   <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+   <script src="{% static 'js/ajax-form.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}

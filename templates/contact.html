@@ -1,0 +1,298 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+
+   <div id="header-sticky-mobile" class="tp-md-header-area d-md-block d-lg-none pt-30 pb-30">
+      <div class="container-fluid">
+         <div class="row align-items-center">
+            <div class="col-md-6 col-6">
+               <div class="tp-logo">
+                  <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+               </div>
+            </div>
+            <div class="col-md-6 col-6">
+               <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                  <a class="tp-btn-yellow d-none d-md-block" href="#">How it Works</a>
+                  <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="{% url 'index' %}">
+               <img src="{% static 'img/logo/logo-text-white.svg' %}" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
+
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Hyderabad, Telangana 500004, IN</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:+919063677927">+91 90636 77927</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></li>
+            </ul>
+         </div>
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
+
+   <main>
+
+      <!-- breadcrumb area start -->
+      <div class="tp-hero-area-two">
+         <div class="tp-hero-bg-circle p-relative">
+            <div class="tp-hero-light-shape-one">
+               <img src="{% static 'img/hero/hero-light-1.png' %}" alt="">
+            </div>
+            <div class="tp-hero-light-shape-two">
+               <img src="{% static 'img/hero/hero-light-2.png' %}" alt="">
+            </div>
+            <div class="tp-hero-light-shape-three z-index-1">
+               <img src="{% static 'img/hero/Spiral.png' %}" alt="">
+            </div>
+            <div class="tp-hero-light-shape-four z-index-1">
+               <img src="{% static 'img/hero/hero-light-2.png' %}" alt="">
+            </div>
+            <div class="container">
+               <div class="row justify-content-center">
+                  <div class="col-xl-10">
+                     <div class="tp-hero-content-box text-center">
+                        <h3 class="tp-hero-title wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
+                           Hi 👋 Ready to supercharge your business with our tech expertise?
+                           <span class="tp-highlight">
+                             <svg width="244" height="8" viewBox="0 0 244 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                               <path d="M0 0L244 8H0V0Z" fill="#FFDC60"/>
+                             </svg>
+                             <i class="tp-theme-color">Get in Touch with Our Tech Heroes!</i>
+                           </span>
+                         </h3>
+                         <p class="tp-subtitle" style="font-size: 14px; color: #777; margin-top: 10px;">
+                           Let our experts elevate your business. Request a call back or reach out to us—your tech boost is just a step away!
+                         </p>
+                         
+   
+   
+   
+                        <div class="tp-hero-img mt-20 mb-80 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
+                           <img src="{% static 'img/hero/hero-3.png' %}" alt="">
+                        </div>
+                        <div class="tp-hero-social-link wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
+                           <a class="tp-btn-white-brand" href="#"><img class="mr-15" src="{% static 'img/hero/hero-icon-1.png' %}"
+                                 alt=""> Dribbble <i class="fal fa-long-arrow-right"></i></a>
+                           <a class="tp-btn-white-brand" href="#"><img class="mr-15" src="{% static 'img/hero/hero-icon-2.png' %}"
+                                 alt=""> Behance <i class="fal fa-long-arrow-right"></i></a>
+                           <a class="tp-btn-white-brand" href="#"><img class="mr-15" src="{% static 'img/hero/hero-icon-3.png' %}"
+                                 alt=""> Message <i class="fal fa-long-arrow-right"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- breadcrumb area end -->
+
+
+      <!--contact-area-start -->
+      <div class="tp-contact-area pt-135 pb-130">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tp-contct-wrapper contact-space-40">
+                     <div class="tp-contact-thumb mb-60">
+                        <img src="{% static 'img/contact/contact-1.jpg' %}" alt="Contact Image">
+                     </div>
+                     <div class="tp-contact-info mb-40">
+                        <h4 class="contact-title">Mail Address</h4>
+                        <span><a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></span>
+                     </div>
+                     <div class="tp-contact-info mb-40">
+                        <h4 class="contact-title">Phone Number</h4>
+                        <span><a href="tel:+919063677927">+91 9063677927</a></span>
+                     </div>
+                     <div class="tp-contact-info">
+                        <h4 class="contact-title">Address</h4>
+                        <span><a href="https://www.google.com/maps?q=Khairatabad,+Hyderabad,+India" target="_blank">Khairatabad, Hyderabad, India</a></span>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tpcontact">
+                     <h4 class="tp-contact-big-title">Let’s Connect...</h4>
+                     <div class="tpcontact__form tpcontact__form-3">
+                        <form id="contact-form" action="assets/mail.php">
+                           <input name="name" type="text" placeholder="Enter Your Name">
+                           <input name="email" type="email" placeholder="Enter Your Email">
+                           <textarea name="message" placeholder="Enter Your Message"></textarea>
+                           <button type="submit" class="tp-btn-yellow">Send Message</button>
+                        </form>
+                        <p class="ajax-response"></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      
+      <!-- contact-area-end -->
+
+   </main>
+
+
+   <!-- footer-area-start -->
+
+   <footer>
+      <div class="tp-footer-area black-bg pt-130 pb-30">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__logo mb-30">
+                        <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-white.svg' %}" alt=""></a>
+                     </div>
+                     <div class="tp-footer-widget__text mb-30">
+                        <p>A new way to make the payments easy,
+                           reliable and 100% secure. claritatem itamconse quat. Exerci tationulla</p>
+                     </div>
+                     <div class="tp-footer-widget__social-link">
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-skype"></i></a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6 d-flex justify-content-lg-center">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Usefull Links</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="{% url 'service-3' %}">Case Studies</a></li>
+                           <li><a href="{% url 'testimonial' %}">Testimonials</a></li>
+                           <li><a href="{% url 'price' %}">Pricing</a></li>
+                           <li><a href="{% url 'job' %}">Careers</a></li>
+                           <li><a href="{% url 'contact' %}">Contact us</a></li>
+                           <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-2 col-md-6">
+                  <div class="tp-footer-widget pl-20">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Community</h3>
+                     </div>
+                     <div class="tp-footer-widget__list">
+                        <ul>
+                           <li><a href="#">Help Center</a></li>
+                           <li><a href="#">Partners</a></li>
+                           <li><a href="#">Suggestions</a></li>
+                           <li><a href="{% url 'blog' %}">Blog</a></li>
+                           <li><a href="#">Newsletters</a></li>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-3 col-lg-4 col-md-6">
+                  <div class="tp-footer-widget">
+                     <div class="tp-footer-widget__title pb-15">
+                        <h3 class="footer-title">Subscribe Newslatter</h3>
+                     </div>
+                     <div class="tp-footer-widget__text mb-55">
+                        <p>Exerci tation ullamcorper suscipit lobortis nisl aliquip ex ea commodo</p>
+                     </div>
+                     <div class="tp-footer-widget__input">
+                        <form action="#">
+                           <input type="text" placeholder="Enter Mail">
+                           <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="tp-copyright-area">
+            <div class="container">
+               <div class="copyright-border pt-40">
+                  <div class="row">
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-left text-lg-start text-start text-md-center">
+                           <p> © Copyright ©2022 Collax. All Rights Reserved Copyright</p>
+                        </div>
+                     </div>
+                     <div class="col-xl-6 col-lg-6 col-12">
+                        <div class="tp-copyright-right text-start text-md-center text-lg-end">
+                           <a href="#">Terms and conditions</a>
+                           <a href="#"> Privacy policy</a>
+                           <a href="#">Login / Signup</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+
+   <!-- footer-area-end -->
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+   <!-- JS here -->
+   <script src="{% static 'js/jquery.js' %}"></script>
+   <script src="{% static 'js/waypoints.js' %}"></script>
+   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'js/swiper-bundle.js' %}"></script>
+   <script src="{% static 'js/slick.js' %}"></script>
+   <script src="{% static 'js/magnific-popup.js' %}"></script>
+   <script src="{% static 'js/counterup.js' %}"></script>
+   <script src="{% static 'js/wow.js' %}"></script>
+   <script src="{% static 'js/meanmenu.js' %}"></script>
+   <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+   <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+   <script src="{% static 'js/ajax-form.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}

@@ -1,0 +1,630 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block content%}
+
+   <!-- tp-md-menu-start -->
+   <div id="header-sticky-mobile" class="tp-md-header-area header-transparent d-lg-none pt-30 ">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-md-6 col-6">
+               <div class="tp-logo">
+                 <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+               </div>
+            </div>
+            <div class="col-md-6 col-6">
+               <div class="tp-header-right z-index-1 d-flex align-items-center justify-content-end">
+                  <a class="tp-btn d-none d-md-block" href="#">Let’s Talk 👋</a>
+                  <button class="tp-menu-bar"><i class="fal fa-bars"></i></button>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- tp-md-menu-end -->
+
+   <div class="tp-offcanvas-area">
+      <div class="tpoffcanvas">
+         <div class="tpoffcanvas__logo">
+            <a href="{% url 'index' %}">
+               <img src="{% static 'img/logo/logo-text-white.svg' %}" alt="">
+            </a>
+         </div>
+         <div class="tpoffcanvas__close-btn">
+            <a class="close-btn" href="javascript:void(0)"><i class="fal fa-times-hexagon"></i></a>
+         </div>
+         <div class="tpoffcanvas__content d-none d-sm-block">
+            <p>We deploy world-class Creative <br> on demand.</p>
+         </div>
+         <div class="mobile-menu">
+
+         </div>
+         <div class="tpoffcanvas__contact">
+            <span>Contact us</span>
+            <ul>
+               <li><i class="fas fa-star"></i> <a href="https://goo.gl/maps/abHegV4AoiJA6Syd8" target="_blank">Hyderabad, Telangana 500004, IN</a></li>
+               <li><i class="fas fa-star"></i> <a href="tel:+919063677927">+91 90636 77927</a></li>
+               <li><i class="fas fa-star"></i> <a href="mailto:info@softwarestudios.com">info@softwarestudios.com</a></li>
+            </ul>
+         </div>
+         <div class="tpoffcanvas__input d-none d-sm-block">
+            <p>Get UPdate</p>
+            <form class="p-relative" action="#">
+               <input type="text" placeholder="Enter mail">
+               <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+         </div>
+         <div class="tpoffcanvas__instagram d-none d-sm-block">
+            <p>Check Instagram POst</p>
+           <div class="tp-insta">
+            <div class="row">
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-1.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-2.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+               <div class="col-3 col-sm-3"><a href="#"><img src="{% static 'img/offcanvas/insta-4.jpg' %}" alt=""></a></div>
+            </div>
+           </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="body-overlay"></div>
+
+   <!-- tp-hero-area-start -->
+   <main>
+   <div class="tp-hero-area-two">
+      <div class="tp-hero-bg-circle p-relative">
+         <div class="tp-hero-light-shape-one">
+            <img src="{% static 'img/hero/hero-light-1.png' %}" alt="">
+         </div>
+         <div class="tp-hero-light-shape-two">
+            <img src="{% static 'img/hero/hero-light-2.png' %}" alt="">
+         </div>
+         <div class="tp-hero-light-shape-three z-index-1">
+            <img src="{% static 'img/hero/Spiral.png' %}" alt="">
+         </div>
+         <div class="tp-hero-light-shape-four z-index-1">
+            <img src="{% static 'img/hero/hero-light-2.png' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-xl-10">
+                  <div class="tp-hero-content-box text-center">
+                  <h3 class="tp-hero-title wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">Hi 👋 Ready to elevate your business with cutting-edge
+                        <span class="tp-highlight"><svg width="244" height="8" viewBox="0 0 244 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                           <path d="M0 0L244 8H0V0Z" fill="#FFDC60"/>
+                           </svg>
+                        <i class="tp-theme-color">Tech Solutions?</i>
+                     </span></h3>
+                     <p class="tp-subtitle" style="font-size: 14px; color: #777; margin-top: 10px;">All at your fingertips, from the comfort of your home.</p>
+
+
+
+
+                     <div class="tp-hero-img mt-20 mb-80 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
+                        <img src="{% static 'img/hero/hero-3.png' %}" alt="">
+                     </div>
+                     <div class="tp-hero-social-link wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
+                        <a class="tp-btn-white-brand" href="#"><img class="mr-15" src="{% static 'img/hero/hero-icon-1.png' %}"
+                              alt=""> Dribbble <i class="fal fa-long-arrow-right"></i></a>
+                        <a class="tp-btn-white-brand" href="#"><img class="mr-15" src="{% static 'img/hero/hero-icon-2.png' %}"
+                              alt=""> Behance <i class="fal fa-long-arrow-right"></i></a>
+                        <a class="tp-btn-white-brand" href="#"><img class="mr-15" src="{% static 'img/hero/hero-icon-3.png' %}"
+                              alt=""> Massage <i class="fal fa-long-arrow-right"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!--service-area-start -->
+   <div class="tp-service-area-two p-relative black-bg pt-125 pb-145 z-index-1">
+      <div class="container">
+         <div class="row">
+                        <div class="col-xl-12">
+    <div class="tp-service-section-box-two text-center">
+        <h5 class="tp-subtitle pb-10">What We Offer</h5>
+        <h2 class="tp-title tp-white-text pb-35">Explore Our Expertise</h2>
+    </div>
+</div>
+
+         </div>
+         <div class="row gx-12">
+            <div class="col-xl-4  col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
+               <div class="tp-sv-item-two tp-sv-blue-color mb-30">
+                  <div class="tp-sv-img mb-40">
+                     <img src="{% static 'img/service/service-3.png' %}" alt="">
+                  </div>
+                  <div class="tp-sv-content-tow">
+                     <h3 class="tp-sv-product-design">Mobile Design</h3>
+                     <p>At Collax we specialize in designing, building, shipping and scaling beautiful, usable products
+                        with blazing-fast</p>
+                  </div>
+                  <div class="tp-sv-icon-two">
+                     <a href="{% url 'service-details' %}"><i class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-4  col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
+               <div class="tp-sv-item-two tp-sv-sky-color mb-30">
+                  <div class="tp-sv-img mb-40">
+                     <img src="{% static 'img/service/service-1.png' %}" alt="">
+                  </div>
+                  <div class="tp-sv-content-tow">
+                     <h3 class="tp-sv-product-design">Mobile Design</h3>
+                     <p>At Collax we specialize in designing, building, shipping and scaling beautiful, usable products
+                        with blazing-fast</p>
+                  </div>
+                  <div class="tp-sv-icon-two">
+                     <a href="{% url 'service-details' %}"><i class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-4  col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
+               <div class="tp-sv-item-two tp-sv-pink-color mb-30">
+                  <div class="tp-sv-img mb-40">
+                     <img src="{% static 'img/service/service-icon-4.png' %}" alt="">
+                  </div>
+                  <div class="tp-sv-content-tow">
+                     <h3 class="tp-sv-product-design">Mobile Design</h3>
+                     <p>At Collax we specialize in designing, building, shipping and scaling beautiful, usable products
+                        with blazing-fast</p>
+                  </div>
+                  <div class="tp-sv-icon-two">
+                     <a href="{% url 'service-details' %}"><i class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--service-area-end -->
+
+   <!-- project-area-start -->
+   <div class="tp-project-area pt-120 pb-120 p-relative">
+      <div class="tp-project-shape-one">
+         <img src="{% static 'img/project/project-shape-2.png' %}" alt="">
+      </div>
+      <div class="tp-project-shape-two">
+         <img src="{% static 'img/project/project-shape-3.png' %}" alt="">
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="project-section-box-two text-center pb-20">
+                  <h5 class="tp-subtitle">Complete Project</h5>
+                  <h2 class="tp-title">Creative work.</h2>
+               </div>
+            </div>
+         </div>
+         <div class="row justify-content-center mb-80">
+            <div class="col-10 p-0 text-center">
+               <div class="tp-project-tab-button masonary-menu">
+                  <button class="active" data-filter="*"><span>All</span></button>
+                  <button data-filter=".cat2"><span>Website</span></button>
+                  <button data-filter=".cat3"><span>ios App</span></button>
+                  <button data-filter=".cat4"><span>Landing Page</span></button>
+                  <button data-filter=".cat5"><span>Branding Design</span></button>
+               </div>
+            </div>
+         </div>
+         <div class="row grid gx-45">
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6  grid-item cat2 cat3">
+               <div class="tp-project-item-two p-relative mb-45">
+                  <div class="project-one fix"><img class="w-100" src="{% static 'img/portfolio/port-10.jpg' %}" alt=""></div>
+                  <div class="tp-project-icon-two">
+                     <a class="popup-image" href="{% static 'img/portfolio/port-10.jpg' %}"><i
+                           class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 grid-item cat5 cta2 cat3 cat4">
+               <div class="tp-project-item-two p-relative mb-45">
+                 <div class="project-one fix"> <img class="w-100" src="{% static 'img/portfolio/port-11.jpg' %}" alt=""></div>
+                  <div class="tp-project-icon-two">
+                     <a class="popup-image" href="{% static 'img/portfolio/port-11.jpg' %}"><i
+                           class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 grid-item cat5 cat3">
+               <div class="tp-project-item-two p-relative  mb-45">
+                 <div class=" project-one fix"> <img class="w-100" src="{% static 'img/portfolio/port-12.jpg' %}" alt=""></div>
+                  <div class="tp-project-icon-two">
+                     <a class="popup-image" href="{% static 'img/portfolio/port-12.jpg' %}"><i
+                           class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+            <div class="col-xxl-6 col-xl-6 col-lg-6 col-md-6 grid-item cat5 cat2 cat3 cat4">
+               <div class="tp-project-item-two  p-relative mb-45">
+                 <div class="project-one fix"> <img class="w-100" src="{% static 'img/portfolio/port-17.jpg' %}" alt=""></div>
+                  <div class="tp-project-icon-two">
+                     <a class="popup-image" href="{% static 'img/portfolio/port-17.jpg' %}"><i
+                           class="fas fa-long-arrow-up"></i></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-12">
+               <div class="tp-project-button text-center mt-25">
+                  <a class="tp-btn" href="{% url 'portfolio-details' %}">View All Work</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- project-area-end -->
+
+   <!-- testimonial-area start-->
+   <div class="testimonial-area grey-bg pt-125 pb-120 fix p-relative">
+      <div class="d-none">
+         <div class="testimonial-shape-1">
+            <img src="{% static 'img/testimonial/testi-info-icon-1.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-2">
+            <img src="{% static 'img/testimonial/testi-info-icon-2.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-3">
+            <img src="{% static 'img/testimonial/testi-info-icon-3.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-4">
+            <img src="{% static 'img/testimonial/testi-info-icon-4.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-5">
+            <img src="{% static 'img/testimonial/testi-info-icon-5.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-6">
+            <img src="{% static 'img/testimonial/testi-info-icon-6.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-7">
+            <img src="{% static 'img/testimonial/testi-info-icon-7.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-8">
+            <img src="{% static 'img/testimonial/testi-info-icon-8.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-9">
+            <img src="{% static 'img/testimonial/testi-info-icon-9.png' %}" alt="">
+         </div>
+         <div class="testimonial-shape-10">
+            <img src="{% static 'img/testimonial/testi-info-icon-10.png' %}" alt="">
+         </div>
+      </div>
+      <div class="container">
+         <div class="row justify-content-center">
+            <div class=" col-xl-8 col-lg-8 col-md-10 col-12 ">
+               <div class="tp-testimonial-section-box-two text-center pb-20">
+                  <h5 class="tp-subtitle">Testimonial</h5>
+                  <h2 class="tp-title">Client feedback</h2>
+               </div>
+               <div class="tp-testimonial-slider-two mb-50">
+                  <div class="swiper-container testimonial-slider-two">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <div class="tp-testimonial-item-two text-center">
+                              <div class="tp-testimonial-info">
+                                 <img src="{% static 'img/testimonial/testi-7.png' %}" alt="">
+                                 <h4>Alextina Diterson</h4>
+                                 <span>CEO of (Orix)
+                                    <i class="fas fa-star fa-stars-1"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                 </span>
+                                 <p>Absolutely amazing. we can't believe how incredible this turned out. Yetta Thomas is
+                                    a
+                                    true professional. he is such a honest, decent and reliable and satisfied</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-testimonial-item-two text-center">
+                              <div class="tp-testimonial-info">
+                                 <img src="{% static 'img/testimonial/testi-7.png' %}" alt="">
+                                 <h4>Alextina Diterson</h4>
+                                 <span>CEO of (Orix)
+                                    <i class="fas fa-star fa-stars-1"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                 </span>
+                                 <p>Absolutely amazing. we can't believe how incredible this turned out. Yetta Thomas is
+                                    a
+                                    true professional. he is such a honest, decent and reliable and satisfied</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-testimonial-item-two text-center">
+                              <div class="tp-testimonial-info">
+                                 <img src="{% static 'img/testimonial/testi-7.png' %}" alt="">
+                                 <h4>Alextina Diterson</h4>
+                                 <span>CEO of (Orix)
+                                    <i class="fas fa-star fa-stars-1"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                 </span>
+                                 <p>Absolutely amazing. we can't believe how incredible this turned out. Yetta Thomas is
+                                    a
+                                    true professional. he is such a honest, decent and reliable and satisfied</p>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="swiper-slide">
+                           <div class="tp-testimonial-item-two text-center">
+                              <div class="tp-testimonial-info">
+                                 <img src="{% static 'img/testimonial/testi-7.png' %}" alt="">
+                                 <h4>Alextina Diterson</h4>
+                                 <span>CEO of (Orix)
+                                    <i class="fas fa-star fa-stars-1"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                 </span>
+                                 <p>Absolutely amazing. we can't believe how incredible this turned out. Yetta Thomas is
+                                    a
+                                    true professional. he is such a honest, decent and reliable and satisfied</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="testimonial-slider-dots text-center"></div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- testimonial-area-end -->
+
+   <!--cta-area-strat -->
+   <div class="tp-cta-area black-bg p-relative fix">
+      <div class="creative-shape-img-2">
+         <img src="{% static 'img/creative/creative-circle-img.png' %}" alt="">
+      </div>
+      <div class="project-shape-img">
+         <img src="{% static 'img/project/project-zoom-img.png' %}" alt="">
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12">
+               <div class="tp-cta-section-title-box pl-60 pt-180 z-index wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
+                  <h5 class="tp-subtitle">What We Do?</h5>
+                  <h2 class="tp-title tp-white-text pb-10">Hi,👋 I am experts in every aspect lifecycle </h2>
+                  <a class="tp-btn-border" href="{% url 'contact' %}">Download CV <i class="far fa-download"></i></a>
+               </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6 col-12 wow tpfadeRight" data-wow-duration=".5s" data-wow-delay=".8s">
+               <div class="tp-cta-img-item z-index-1 pt-115 pl-10">
+                  <img src="{% static 'img/cta/cta-1.png' %}" alt="">
+               </div>
+            </div>
+         </div>
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="tp-cta-bottom-wrapper">
+                  <div class="row justify-content-center">
+                     <div class="col-xl-3 col-lg-6 col-md-6 col-10">
+                        <div class="tp-cta-social-info">
+                           <a class="tp-btn-white-lg" href="#"><img class="mr-15" src="{% static 'img/cta/1.png' %}" alt=""> 8k
+                              Followers</a>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-6 col-md-6 col-10">
+                        <div class="tp-cta-social-info">
+                           <a class="tp-btn-white-lg" href="#"><img class="mr-15" src="{% static 'img/cta/2.png' %}" alt=""> 12k
+                              Followers</a>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-6 col-md-6 col-10">
+                        <div class="tp-cta-social-info">
+                           <a class="tp-btn-white-lg" href="#"><img class="mr-15" src="{% static 'img/cta/3.png' %}" alt=""> 65k
+                              Followers</a>
+                        </div>
+                     </div>
+                     <div class="col-xl-3 col-lg-6 col-md-6 col-10">
+                        <div class="tp-cta-social-info">
+                           <a class="tp-btn-white-lg" href="#"><img class="mr-15" src="{% static 'img/cta/4.png' %}" alt="">1.5
+                              M Followers</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--cta-area-end -->
+
+   <!-- blog-area-start -->
+   <div class="tp-blog-area pt-125 pb-90 grey-bg">
+      <div class="container">
+         <div class="row">
+            <div class="col-xl-12">
+               <div class="tp-blog-section-box text-center mb-50">
+                  <h5 class="tp-subtitle">Blog & Article</h5>
+                  <h2 class="tp-title">Recent blog post</h2>
+               </div>
+            </div>
+         </div>
+         <div class="tp-blog-space">
+            <div class="row gx-120">
+               <div class="col-xl-6 col-lg-6 col-md-12 col-12 tp-blog-border mb-30 wow tpfadeLeft" data-wow-duration=".3s" data-wow-delay=".5s">
+                  <div class="tp-blog-box ">
+                     <div class="tp-blog-item blog-grey-color">
+                        <div class="tp-blog-img fix mb-35">
+                           <a href="#"><img class="w-100" src="{% static 'img/blog/blog-3.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="tp-blog-meta d-flex justify-content-between mb-30">
+                           <a href="#">Tutorilas</a>
+                           <a class="tp-blog-meta-color" href="#">February. 20.2022</a>
+                        </div>
+                        <div class="tp-blog-info">
+                           <h3 class="tp-blog-title"><a href="{% url 'blog-details' %}">When and how to use Freelancers In Your Organization</a></h3>
+                           <p>At Collax we specialize in designing, building, shipping and scaling beautiful, usable
+                              products
+                              with blazing-fast</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-12 col-12 mb-30 wow tpfadeRight" data-wow-duration=".5s" data-wow-delay=".8s">
+                  <div class="tp-blog-box">
+                     <div class="tp-blog-item blog-grey-color">
+                        <div class="tp-blog-img fix mb-35">
+                           <a href="#"><img class="w-100" src="{% static 'img/blog/blog-4.jpg' %}" alt=""></a>
+                        </div>
+                        <div class="tp-blog-meta d-flex justify-content-between mb-30">
+                           <a href="#">Business</a>
+                           <a class="tp-blog-meta-color" href="#">February. 20.2022</a>
+                        </div>
+                        <div class="tp-blog-info">
+                           <h3 class="tp-blog-title"><a href="{% url 'blog-details' %}">A complete guide to mobile app marketing </a></h3>
+                           <p>At Collax we specialize in designing, building, shipping and scaling beautiful, usable
+                              products
+                              with blazing-fast</p>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- blog-area-end -->
+
+   <!-- news-letter-area-start -->
+   <div class="tp-news-area black-bg fix">
+      <div class="container">
+         <div class="row align-items-end flex-wrap-reverse flex-md-wrap">
+            <div class="col-xl-6 col-lg-6 col-md-6">
+               <div class="tp-newsletter-left-img pt-60 p-relative wow tpfadeLeft" data-wow-duration=".3s" data-wow-delay=".5s">
+                 <div class="z-index"> <img src="{% static 'img/news/news-2.png' %}" alt=""></div>
+                  <div class="news-shape-img">
+                     <img src="{% static 'img/creative/creative-circle-img.png' %}" alt="">
+                  </div>
+               </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-6">
+               <div class="tp-news-letter-section-box-two pt-135 pb-145 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".7s">
+                  <h5 class="tp-subtitle">Need a Project ?</h5>
+                  <h2 class="tp-title tp-white-text pb-10">Let's work together. fixed a meeting</h2>
+                  <a class="tp-btn-border" href="{% url 'contact' %}">Fixed a Meeting </a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- news-letter-area-end -->
+   <div class="tp-news-letter-area">
+      <div class="tp-suscribe-newslatter theme-bg pt-60 pb-60" data-background="{% static 'img/news/shape-3.png' %}">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tp-newsletter-title">
+                     <h3 class="tp-news-title">Subscribe newslatter</h3>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6">
+                  <div class="tp-news-button p-relative">
+                     <form action="#">
+                        <input type="text" placeholder="Enter your mail">
+                        <button class="tp-submit-button tp-btn-yellow" type="submit">Subscribe <i
+                              class="far fa-arrow-right"></i></button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+  </div>
+   
+   </main>
+   <!-- tp-hero-area-end -->
+
+   <!-- footer-area-start -->
+
+   <!--<footer> -->
+   <footer class="p-relative">
+      <div class="tp-footer-area pt-120 p-relative">
+         <div class="tp-footer-shape-one">
+            <img src="{% static 'img/creative/creative-hand.png' %}" alt="">
+         </div>
+         <div class="tp-footer-shape-two">
+            <img src="{% static 'img/service/service-1.png' %}" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-12 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".5s">
+                  <div class="footer-widget-info text-center">
+                     <h2 class="tp-footer-title pb-15">Let’s build something together</h2>
+                     <p>At Collax we specialize in designing, building, shipping and scaling beautiful, usable products
+                        with blazing-fast efficiency</p>
+                     <a class="tp-btn mb-50" href="#">Contact us</a>
+                     <p class="right-receved">© 2022 Personal Portfolio , All Right Receved.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="tp-copyright-bottom wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".7s">
+               <div class="row align-items-center">
+                  <div class="col-xl-4 col-lg-4 col-md-12 col-12">
+                     <div class="tp-copyright-logo-box text-md-center text-center text-lg-start mb-30">
+                        <div class="tp-copyright-logo">
+                           <a href="{% url 'index' %}"><img src="{% static 'img/logo/logo-text-blue.svg' %}" alt=""></a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                     <div class="tp-cpoyright-menu text-md-start text-center text-lg-center mb-30">
+                        <a href="#">Case Studies</a>
+                        <a href="#">Pricing Plan</a>
+                     </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                     <div class="tp-copyright-social tp-copyright-social-two text-center text-lg-end mb-30">
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </footer>
+   <!-- footer-area-end -->
+
+
+   <button class="scroll-top scroll-to-target" data-target="html">
+      <i class="far fa-angle-double-up"></i>
+  </button>
+
+
+   <!-- JS here -->
+   <script src="{% static 'js/jquery.js' %}"></script>
+   <script src="{% static 'js/waypoints.js' %}"></script>
+   <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+   <script src="{% static 'js/swiper-bundle.js' %}"></script>
+   <script src="{% static 'js/slick.js' %}"></script>
+   <script src="{% static 'js/magnific-popup.js' %}"></script>
+   <script src="{% static 'js/counterup.js' %}"></script>
+   <script src="{% static 'js/wow.js' %}"></script>
+   <script src="{% static 'js/meanmenu.js' %}"></script>
+   <script src="{% static 'js/isotope-pkgd.js' %}"></script>
+   <script src="{% static 'js/imagesloaded-pkgd.js' %}"></script>
+   <script src="{% static 'js/ajax-form.js' %}"></script>
+   <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
+{% endblock %}
