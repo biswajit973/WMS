@@ -1,39 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    const [isSticky, setIsSticky] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 200) {
-                setIsSticky(true);
-            } else {
-                setIsSticky(false);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
     return (
         <>
-            <header className="d-none d-lg-block">
-                <div
-                    id="header-sticky"
-                    className={`tp-header-area-two header-transparent header-space-three pl-115 pr-115 pt-35 ${isSticky ? 'header-sticky' : ''}`}
-                >
+            <header className="ss-nav-wrap d-none d-lg-block">
+                <div className="tp-header-area-two ss-main-header">
                     <div className="container-fluid">
                         <div className="row align-items-center">
-                            <div className="col-xxl-3 col-xl-2 col-lg-2">
+                            <div className="col-xxl-3 col-xl-3 col-lg-3">
                                 <div className="tp-logo text-start">
                                     <Link to="/">
                                         <img src="/img/logo/logo-text-blue.svg" alt="SoftwareStudios Logo" />
                                     </Link>
                                 </div>
                             </div>
-                            <div className="col-xxl-6 col-xl-7 col-lg-7">
+                            <div className="col-xxl-6 col-xl-6 col-lg-6">
                                 <div className="tp-main-menu tp-menu-black text-center">
                                     <nav id="mobile-menu">
                                         <ul>
@@ -48,8 +30,8 @@ const Navbar = () => {
                             </div>
                             <div className="col-xxl-3 col-xl-3 col-lg-3">
                                 <div className="tp-header-left d-flex align-items-center justify-content-end">
-                                    <div className="tp-header-yellow-button tp-yellow-space">
-                                        <Link className="tp-btn-black" to="/contact/">Contact</Link>
+                                    <div className="tp-header-yellow-button">
+                                        <Link className="tp-btn-black ss-contact-btn" to="/contact/">Contact</Link>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +41,7 @@ const Navbar = () => {
             </header>
 
             {/* Mobile Menu */}
-            <div id="header-sticky-mobile" className={`tp-md-header-area d-md-block d-lg-none pt-30 pb-30 ${isSticky ? 'header-sticky' : ''} header-transparent`}>
+            <div className="tp-md-header-area d-md-block d-lg-none ss-mobile-header">
                 <div className="container-fluid">
                     <div className="row align-items-center">
                         <div className="col-md-6 col-6">

@@ -1,18 +1,77 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import SEOHead from '../components/SEOHead';
 
 import { Link } from 'react-router-dom';
+import ServiceGrid from '../components/ServiceGrid';
+import { SERVICES_CATALOG } from '../data/servicesCatalog';
+import { SHOWCASE_VIDEOS } from '../data/showcaseVideos';
+
+const WHY_CHOOSE_MOBILE_ITEMS = [
+    { title: '24/7 Support', icon: 'fas fa-headset' },
+    { title: 'Fast Delivery', icon: 'fas fa-bolt' },
+    { title: 'Custom Build', icon: 'fas fa-cogs' },
+    { title: 'Growth Focus', icon: 'fas fa-chart-line' },
+];
+
+const HOW_WE_WORK_MOBILE_ITEMS = [
+    { step: '01', title: 'Discover' },
+    { step: '02', title: 'Plan' },
+    { step: '03', title: 'Build' },
+    { step: '04', title: 'Launch' },
+];
 
 const HomePage = () => {
+    const [videoActionState, setVideoActionState] = useState({});
+    const videoActionTimersRef = useRef({});
+
+    const setVideoAudioDefaults = (target) => {
+        const video = target?.currentTarget || target;
+        if (!video) return;
+        video.defaultMuted = false;
+        video.muted = false;
+        video.volume = 1;
+    };
+
+    const showVideoAction = (videoId, action) => {
+        if (videoActionTimersRef.current[videoId]) {
+            window.clearTimeout(videoActionTimersRef.current[videoId]);
+        }
+
+        setVideoActionState((prev) => ({ ...prev, [videoId]: action }));
+        videoActionTimersRef.current[videoId] = window.setTimeout(() => {
+            setVideoActionState((prev) => ({ ...prev, [videoId]: null }));
+            delete videoActionTimersRef.current[videoId];
+        }, 850);
+    };
+
+    const handleVideoPlay = (videoId, event) => {
+        setVideoAudioDefaults(event);
+        showVideoAction(videoId, 'pause');
+    };
+
+    const handleVideoPause = (videoId) => {
+        showVideoAction(videoId, 'play');
+    };
+
     // Re-initialize Swiper after React renders the testimonial section.
     // main.js runs before this lazy-loaded component mounts, so Swiper
     // can't find .testi-slider-active-five on first page load.
     useEffect(() => {
-        let swiperInstance = null;
+        let testimonialSwiper = null;
+        let videoSwiper = null;
+        let videoAutoAdvanceTimer = null;
+
+        const isUserWatchingVideo = () => {
+            const videos = document.querySelectorAll('.ss-video-slider video');
+            return Array.from(videos).some((video) => !video.paused && !video.ended && video.currentTime > 0);
+        };
+
         const timer = setTimeout(() => {
-            const el = document.querySelector('.testi-slider-active-five');
-            if (el && window.Swiper) {
-                swiperInstance = new window.Swiper('.testi-slider-active-five', {
+            if (!window.Swiper) return;
+
+            const testimonialEl = document.querySelector('.testi-slider-active-five');
+            if (testimonialEl) {
+                testimonialSwiper = new window.Swiper('.testi-slider-active-five', {
                     loop: true,
                     slidesPerView: 3,
                     spaceBetween: 20,
@@ -39,10 +98,44 @@ const HomePage = () => {
                     },
                 });
             }
-        }, 100);
+
+            const videoEl = document.querySelector('.ss-video-slider');
+            if (videoEl) {
+                videoSwiper = new window.Swiper('.ss-video-slider', {
+                    loop: SHOWCASE_VIDEOS.length > 1,
+                    initialSlide: 0,
+                    spaceBetween: 0,
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                    navigation: {
+                        nextEl: '.ss-video-next',
+                        prevEl: '.ss-video-prev',
+                    },
+                    breakpoints: {
+                        768: { slidesPerView: 2, spaceBetween: 18, centeredSlides: false },
+                        1200: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+                    },
+                });
+
+                // Advance media every 10 seconds only when the user is not
+                // actively watching/playing any video in the carousel.
+                videoAutoAdvanceTimer = window.setInterval(() => {
+                    if (!videoSwiper || videoSwiper.destroyed || document.hidden) return;
+                    if (isUserWatchingVideo()) return;
+                    videoSwiper.slideNext();
+                }, 10000);
+            }
+        }, 120);
+
         return () => {
             clearTimeout(timer);
-            if (swiperInstance) swiperInstance.destroy(true, true);
+            if (videoAutoAdvanceTimer) window.clearInterval(videoAutoAdvanceTimer);
+            if (testimonialSwiper) testimonialSwiper.destroy(true, true);
+            if (videoSwiper) videoSwiper.destroy(true, true);
+            Object.values(videoActionTimersRef.current).forEach((timeoutId) => {
+                window.clearTimeout(timeoutId);
+            });
+            videoActionTimersRef.current = {};
         };
     }, []);
     return (
@@ -100,8 +193,7 @@ const HomePage = () => {
                 </div>
             </div>
 
-            <br />
-            <div className="corporate-chose__area pt-120 pb-120 corporate-plr">
+            <div className="corporate-chose__area pt-120 pb-120 corporate-plr ss-home-chose">
                 <div className="container">
                     <div className="row align-items-center">
                         <div className="col-xl-6 wow tpfadeLeft" data-wow-duration=".9s" data-wow-delay=".5s">
@@ -128,7 +220,7 @@ const HomePage = () => {
             </div>
 
             {/* service-area-start */}
-            <div className="tp-service-area pb-90 pt-30 grey-bg">
+            <div className="tp-service-area pb-90 pt-30 grey-bg ss-home-services">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-7 col-lg-10">
@@ -142,113 +234,17 @@ const HomePage = () => {
                                         </svg>
                                     </span>
                                 </h2>
+                                <p className="pt-15">A practical stack of services built for speed, conversions, and measurable business growth.</p>
                             </div>
                         </div>
                     </div>
-                    <div className="row">
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".5s">
-                            <div className="tp-sv-border-effect">
-                                <div className="tp-service-item-four sv-color-1 mb-30">
-                                    <div className="tp-service-item-four__img  mb-40">
-                                        <img src="/img/service/007-email.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">Social Media Marketing</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".7s">
-                            <div className="tp-sv-border-effect sv-border-effect-1">
-                                <div className="tp-service-item-four sv-color-2 mb-30">
-                                    <div className="tp-service-item-four__img  mb-40">
-                                        <img src="/img/service/service4.1.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">Web & Mobile Development</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s">
-                            <div className="tp-sv-border-effect sv-border-effect-2">
-                                <div className="tp-service-item-four sv-color-3 mb-30">
-                                    <div className="tp-service-item-four__img mb-40">
-                                        <img src="/img/service/service4.2.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">E-commerce Solutions</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1s">
-                            <div className="tp-sv-border-effect sv-border-effect-3">
-                                <div className="tp-service-item-four sv-color-4 mb-30">
-                                    <div className="tp-service-item-four__img mb-40">
-                                        <img src="/img/service/service4.3.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">Content Creation </Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.1s">
-                            <div className="tp-sv-border-effect sv-border-effect-4">
-                                <div className="tp-service-item-four sv-color-5 mb-30">
-                                    <div className="tp-service-item-four__img mb-40">
-                                        <img src="/img/service/service4.4.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">Desktop App Development</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration="1s" data-wow-delay="1.1s">
-                            <div className="tp-sv-border-effect sv-border-effect-5">
-                                <div className="tp-service-item-four sv-color-6 mb-30">
-                                    <div className="tp-service-item-four__img mb-40">
-                                        <img src="/img/service/service4.5.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">Branding and Graphic Design</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration="1s" data-wow-delay="1.2s">
-                            <div className="tp-sv-border-effect sv-border-effect-6">
-                                <div className="tp-service-item-four sv-color-7 mb-30">
-                                    <div className="tp-service-item-four__img mb-40">
-                                        <img src="/img/service/service4.6.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">AI/ML Solutions</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-xl-3 col-lg-4 col-md-6 wow tpfadeUp" data-wow-duration="1.1s" data-wow-delay="1.3s">
-                            <div className="tp-sv-border-effect">
-                                <div className="tp-service-item-four sv-color-1 mb-30">
-                                    <div className="tp-service-item-four__img mb-40">
-                                        <img src="/img/service/007-email.png" alt="" />
-                                    </div>
-                                    <div className="tp-service-item-four__title">
-                                        <h3 className="tp-sv-sm-title"><Link to="/service-1/">AI Agents & Automation</Link></h3>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ServiceGrid services={SERVICES_CATALOG} getHref={() => '/service-1/'} />
                 </div>
             </div>
             {/* service-area-end */}
 
             {/* feature-area-start */}
-            <div className="tp-feature-arae pt-130 pb-100 p-relative">
+            <div className="tp-feature-arae pt-130 pb-100 p-relative ss-home-feature">
                 <div className="ce-chose-shape d-none d-lg-block">
                     <img src="/img/hero/hero-shape-4.png" alt="" />
                 </div>
@@ -273,7 +269,7 @@ const HomePage = () => {
                                         </span>
                                     </h2>
                                 </div>
-                                <div className="fea-wrapper-main">
+                                <div className="fea-wrapper-main d-none d-md-block">
                                     <div className="tp-feature-list d-flex">
                                         <div className="tp-feature-list__icon-img fea-color-1 mr-25">
                                             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -320,6 +316,16 @@ const HomePage = () => {
                                         </div>
                                     </div>
                                 </div>
+                                <div className="ss-feature-mobile-grid d-md-none">
+                                    {WHY_CHOOSE_MOBILE_ITEMS.map((item) => (
+                                        <article className="ss-feature-mobile-card" key={item.title}>
+                                            <span className="ss-feature-mobile-card__icon">
+                                                <i className={item.icon}></i>
+                                            </span>
+                                            <h4>{item.title}</h4>
+                                        </article>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -332,7 +338,7 @@ const HomePage = () => {
                 <div className="shape-two z-index-1">
                     <img src="/img/hero/shape-2.png" alt="" />
                 </div>
-                <div className="tp-creative-area p-relative black-bg pt-140 pb-135 fix">
+                <div className="tp-creative-area p-relative black-bg pt-140 pb-135 fix ss-home-creative">
                     <div className="circle-animation testimonial">
                         <span className="tp-circle-1"></span>
                         <span className="tp-circle-2"></span>
@@ -405,10 +411,7 @@ const HomePage = () => {
                 </div>
             </div>
             {/* creative-area-end */}
-
-            <br />
-            <br />
-            <div className="container" id="how-it-works">
+            <div className="container ss-how-work" id="how-it-works">
                 <div className="row">
                     <div className="col-lg-6 col-md-12 col-12">
                         <div className="tp-service-section-box mb-30 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
@@ -417,7 +420,17 @@ const HomePage = () => {
                             <Link className="tp-btn" to="/service-details/">View All Services</Link>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-12 col-12">
+                    <div className="col-12 d-md-none">
+                        <div className="ss-how-work-mobile-grid">
+                            {HOW_WE_WORK_MOBILE_ITEMS.map((item) => (
+                                <article className="ss-how-work-mobile-card" key={item.step}>
+                                    <span className="ss-how-work-mobile-card__step">{item.step}</span>
+                                    <h4>{item.title}</h4>
+                                </article>
+                            ))}
+                        </div>
+                    </div>
+                    <div className="col-lg-6 col-md-12 col-12 d-none d-md-block">
                         <div className="tp-sv-box wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
                             <div className="tp-service-item d-flex mb-30">
                                 <div className="tp-sv-img">
@@ -434,7 +447,7 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-12 col-12">
+                    <div className="col-lg-6 col-md-12 col-12 d-none d-md-block">
                         <div className="tp-sv-box wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
                             <div className="tp-service-item d-flex mb-30">
                                 <div className="tp-sv-img">
@@ -451,7 +464,7 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6 col-md-12 col-12">
+                    <div className="col-lg-6 col-md-12 col-12 d-none d-md-block">
                         <div className="tp-sv-box wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.2s">
                             <div className="tp-service-item d-flex mb-30">
                                 <div className="tp-sv-img">
@@ -472,27 +485,71 @@ const HomePage = () => {
             </div>
 
             {/* testimonial-area-start */}
-            <div className="tp-testimonial-area pt-100 pb-100 p-relative">
+            <div className="tp-testimonial-area pt-100 pb-100 p-relative ss-home-testimonials">
                 <div className="ce-testi-shape d-none d-lg-block">
                     <img src="/img/hero/hero-shape-4.png" alt="" />
                 </div>
                 <div className="container">
-                    <div className="row">
-                        <div className="col-xl-12">
-                            <div className="tp-testi-wrapper d-flex pb-50 justify-content-between align-items-end">
-                                <div className="tp-testimonial-title-box ">
-                                    <h5 className="tp-subtitle">Testimonials</h5>
-                                    <h2 className="tp-title-sm">Hear from our
-                                        <span className="tp-section-highlight">
-                                            happy clients
-                                            <svg width="212" height="11" viewBox="0 0 212 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <path d="M0 0L212 11H0V0Z" fill="#FFDC60" />
-                                            </svg>
-                                        </span>
-                                    </h2>
-                                </div>
-                                <div className="tp-testi-button-right-side">
+                    <div className="row ss-home-testi-top align-items-end">
+                        <div className="col-xl-5 col-lg-5">
+                            <div className="tp-testimonial-title-box">
+                                <h5 className="tp-subtitle">Testimonials</h5>
+                                <h2 className="tp-title-sm">Hear from our
+                                    <span className="tp-section-highlight">
+                                        happy clients
+                                        <svg width="212" height="11" viewBox="0 0 212 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0L212 11H0V0Z" fill="#FFDC60" />
+                                        </svg>
+                                    </span>
+                                </h2>
+                                <div className="tp-testi-button-right-side mt-25">
                                     <Link className="tp-btn" to="/testimonial/">More Testimonials</Link>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-xl-7 col-lg-7">
+                            <div className="ss-video-carousel-wrap">
+                                <div className="ss-video-carousel-nav">
+                                    <button className="ss-video-arrow ss-video-prev" type="button" aria-label="Previous video">
+                                        <i className="far fa-angle-left"></i>
+                                    </button>
+                                    <button className="ss-video-arrow ss-video-next" type="button" aria-label="Next video">
+                                        <i className="far fa-angle-right"></i>
+                                    </button>
+                                </div>
+                                <div className="swiper-container ss-video-slider">
+                                    <div className="swiper-wrapper">
+                                        {SHOWCASE_VIDEOS.map((video) => (
+                                            <div className="swiper-slide" key={video.id}>
+                                                <article className="ss-home-video-panel">
+                                                    <div className="ss-video-media-wrap">
+                                                        <video
+                                                            controls
+                                                            preload="metadata"
+                                                            playsInline
+                                                            ref={setVideoAudioDefaults}
+                                                            onLoadedMetadata={setVideoAudioDefaults}
+                                                            onPlay={(event) => handleVideoPlay(video.id, event)}
+                                                            onPause={() => handleVideoPause(video.id)}
+                                                        >
+                                                            <source src={video.mp4} type="video/mp4" />
+                                                            {video.mov && <source src={video.mov} type="video/quicktime" />}
+                                                        </video>
+                                                        <span
+                                                            className={`ss-video-feedback-icon${videoActionState[video.id] ? ' is-visible' : ''}`}
+                                                            aria-hidden="true"
+                                                        >
+                                                            <i className={videoActionState[video.id] === 'play' ? 'fas fa-play' : 'fas fa-pause'}></i>
+                                                        </span>
+                                                    </div>
+                                                    <div className="ss-home-video-panel__meta">
+                                                        <h4>{video.title}</h4>
+                                                        <p>{video.subtitle}</p>
+                                                    </div>
+                                                </article>
+                                            </div>
+                                        ))}
+                                    </div>
                                 </div>
                             </div>
                         </div>

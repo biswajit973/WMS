@@ -47,7 +47,15 @@ const PricePage = () => {
         }
 
         .cp-price-area .cpprice__button {
-           padding-top: 34px;
+           padding-top: 24px;
+        }
+
+        .cpprice__list ul {
+           list-style: disc;
+        }
+
+        .cpprice__badge {
+           box-shadow: 0 6px 18px rgba(255, 220, 96, 0.35);
         }
 
         @media (max-width: 991px) {
@@ -66,7 +74,7 @@ const PricePage = () => {
                         <div className="col-xxl-12">
                             <div className="breadcrumb__content p-relative z-index-1">
                                 <h3 className="breadcrumb__title">Pricing Plan</h3>
-                                <Link to="/contact/" className="tp-btn-white-border">Lets work together <i className="far fa-arrow-right"></i></Link>
+                                <Link to="/contact/" className="tp-btn-white-border ss-breadcrumb-cta">Lets work together <i className="far fa-arrow-right"></i></Link>
                             </div>
                         </div>
                     </div>
@@ -82,9 +90,9 @@ const PricePage = () => {
                             <p>Pick the plan that fits your budget. Upgrade anytime as your business grows.</p>
                         </div>
                     </div>
-                    <div className="row tp-gx-15">
-                        <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-                            <div className="cpprice text-center mb-20">
+                    <div className="row tp-gx-15 ss-price-grid">
+                        <div className="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
+                            <div className="cpprice ss-price-card mb-20">
                                 <div className="cpprice__title">
                                     <h3 className="cp-price-title">Starter Launch</h3>
                                 </div>
@@ -109,8 +117,8 @@ const PricePage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-                            <div className="cpprice active text-center mb-20">
+                        <div className="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
+                            <div className="cpprice active ss-price-card mb-20">
                                 <span className="cpprice__badge">Most Popular</span>
                                 <div className="cpprice__title">
                                     <h3 className="cp-price-title">Business Growth</h3>
@@ -136,8 +144,8 @@ const PricePage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-                            <div className="cpprice text-center mb-20">
+                        <div className="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
+                            <div className="cpprice ss-price-card mb-20">
                                 <div className="cpprice__title">
                                     <h3 className="cp-price-title">Professional Scale</h3>
                                 </div>
@@ -162,8 +170,8 @@ const PricePage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-xl-3 col-lg-6 col-md-6 col-12">
-                            <div className="cpprice text-center mb-20">
+                        <div className="col-xl-3 col-lg-6 col-md-6 col-12 d-flex">
+                            <div className="cpprice ss-price-card mb-20">
                                 <div className="cpprice__title">
                                     <h3 className="cp-price-title">Enterprise Solutions</h3>
                                 </div>

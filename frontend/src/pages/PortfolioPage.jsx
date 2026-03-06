@@ -3,6 +3,7 @@ import SEOHead from '../components/SEOHead';
 
 import { Link } from 'react-router-dom';
 import { highlights } from '../data/highlights';
+import { SHOWCASE_VIDEOS } from '../data/showcaseVideos';
 
 const PortfolioPage = () => {
     return (
@@ -65,13 +66,13 @@ const PortfolioPage = () => {
            position: absolute;
            inset: 0;
            display: flex;
-           align-items: center;
-           justify-content: center;
+           align-items: flex-start;
+           justify-content: flex-end;
            flex-direction: column;
-           gap: 8px;
-           text-align: center;
+           gap: 10px;
+           text-align: left;
            padding: 18px;
-           background: linear-gradient(180deg, rgba(10, 19, 46, 0.08) 15%, rgba(10, 19, 46, 0.72) 100%);
+           background: linear-gradient(180deg, rgba(10, 19, 46, 0.02) 22%, rgba(10, 19, 46, 0.9) 100%);
            color: #ffffff;
         }
 
@@ -79,6 +80,11 @@ const PortfolioPage = () => {
            font-size: 20px;
            font-weight: 700;
            line-height: 1.3;
+           text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+           background: rgba(7, 15, 38, 0.6);
+           border: 1px solid rgba(255, 255, 255, 0.2);
+           padding: 6px 12px;
+           border-radius: 10px;
         }
 
         .highlight-preview-overlay span {
@@ -171,7 +177,7 @@ const PortfolioPage = () => {
                         <div className="col-xxl-12">
                             <div className="breadcrumb__content p-relative z-index-1">
                                 <h3 className="breadcrumb__title">Our Work</h3>
-                                <Link to="/contact/" className="tp-btn-white-border">Lets work together <i className="far fa-arrow-right"></i></Link>
+                                <Link to="/contact/" className="tp-btn-white-border ss-breadcrumb-cta">Lets work together <i className="far fa-arrow-right"></i></Link>
                             </div>
                         </div>
                     </div>
@@ -201,7 +207,35 @@ const PortfolioPage = () => {
                 </div>
             </div>
 
-            <div className="tp-project-area pt-120 pb-120 p-relative">
+            <section className="tp-project-area pt-90 pb-40 p-relative">
+                <div className="container">
+                    <div className="row justify-content-center pb-35">
+                        <div className="col-xl-8 col-lg-10 text-center">
+                            <h5 className="tp-subtitle pb-10">Featured Videos</h5>
+                            <h2 className="tp-title-sm pb-10">See recent delivery snapshots</h2>
+                            <p>Preview project quality through real visual case clips from our latest client collaborations.</p>
+                        </div>
+                    </div>
+                    <div className="row gx-4 gy-4">
+                        {SHOWCASE_VIDEOS.map((video) => (
+                            <div className="col-lg-6 col-md-12" key={video.id}>
+                                <article className="ss-work-videos">
+                                    <video controls preload="metadata" playsInline muted>
+                                        <source src={video.mp4} type="video/mp4" />
+                                        <source src={video.mov} type="video/quicktime" />
+                                    </video>
+                                    <div className="ss-work-videos__meta">
+                                        <h4>{video.title}</h4>
+                                        <p>{video.subtitle}</p>
+                                    </div>
+                                </article>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            <div className="tp-project-area pt-80 pb-120 p-relative">
                 <div className="container">
                     <div className="row justify-content-center">
                         <div className="col-xl-8 col-lg-10">
