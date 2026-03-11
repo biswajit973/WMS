@@ -13,11 +13,25 @@ const WHY_CHOOSE_MOBILE_ITEMS = [
     { title: 'Growth Focus', icon: 'fas fa-chart-line' },
 ];
 
-const HOW_WE_WORK_MOBILE_ITEMS = [
-    { step: '01', title: 'Discover' },
-    { step: '02', title: 'Plan' },
-    { step: '03', title: 'Build' },
-    { step: '04', title: 'Launch' },
+const HOW_WE_WORK_STEPS = [
+    {
+        step: '01',
+        title: 'Discover',
+        desc: '30-minute call to map your goals.',
+        icon: 'flaticon-satisfaction',
+    },
+    {
+        step: '02',
+        title: 'Design & Build',
+        desc: 'UI and development in agile sprints.',
+        icon: 'flaticon-clipboard',
+    },
+    {
+        step: '03',
+        title: 'Launch & Scale',
+        desc: 'Deploy, track, and optimize continuously.',
+        icon: 'flaticon-setting',
+    },
 ];
 
 const HomePage = () => {
@@ -73,28 +87,18 @@ const HomePage = () => {
             if (testimonialEl) {
                 testimonialSwiper = new window.Swiper('.testi-slider-active-five', {
                     loop: true,
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                    centeredSlides: true,
+                    slidesPerView: 'auto',
+                    spaceBetween: 18,
+                    grabCursor: true,
                     autoplay: {
                         delay: 3000,
                         disableOnInteraction: false,
-                        pauseOnMouseEnter: true,
-                    },
-                    pagination: {
-                        el: '.testimonial-slider-dots-four',
-                        clickable: true,
-                    },
-                    navigation: {
-                        nextEl: '.test-n',
-                        prevEl: '.test-p',
+                        pauseOnMouseEnter: false,
                     },
                     breakpoints: {
-                        1200: { slidesPerView: 3 },
-                        992: { slidesPerView: 3 },
-                        768: { slidesPerView: 1 },
-                        576: { slidesPerView: 1 },
-                        0: { slidesPerView: 1 },
+                        992: { spaceBetween: 18 },
+                        768: { spaceBetween: 16 },
+                        0: { spaceBetween: 12 },
                     },
                 });
             }
@@ -104,16 +108,17 @@ const HomePage = () => {
                 videoSwiper = new window.Swiper('.ss-video-slider', {
                     loop: SHOWCASE_VIDEOS.length > 1,
                     initialSlide: 0,
-                    spaceBetween: 0,
-                    slidesPerView: 1,
+                    spaceBetween: 14,
+                    slidesPerView: 'auto',
                     centeredSlides: true,
+                    grabCursor: true,
                     navigation: {
                         nextEl: '.ss-video-next',
                         prevEl: '.ss-video-prev',
                     },
                     breakpoints: {
-                        768: { slidesPerView: 2, spaceBetween: 18, centeredSlides: false },
-                        1200: { slidesPerView: 2, spaceBetween: 20, centeredSlides: false },
+                        768: { spaceBetween: 16, centeredSlides: false },
+                        1200: { spaceBetween: 18, centeredSlides: false },
                     },
                 });
 
@@ -147,7 +152,7 @@ const HomePage = () => {
             />
 
             {/* tp-hero-area-start */}
-            <div className="tp-hero-area-two pt-130 p-relative fix">
+            <div className="tp-hero-area-two pt-130 p-relative fix ss-home-hero">
                 <div className="tp-hero-yellow-shape d-none d-lg-block"></div>
                 <div className="ce-hero-shape d-none d-lg-block">
                     <img src="/img/hero/hero-shape-4.png" alt="" />
@@ -173,7 +178,7 @@ const HomePage = () => {
                                     Whether you run a small shop or a growing company — we design websites, mobile apps, and online marketing that bring you more customers. Simple. Affordable. Fast.
                                 </p>
                                 <div className="tp-hero-three-button-box d-flex align-items-center wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s">
-                                    <a className="tp-btn mr-55 mb-20" href="#how-it-works">How it Works</a>
+                                    <Link className="tp-btn mr-55 mb-20" to="/portfolio/">Our Works</Link>
                                 </div>
                             </div>
                             <div className="tp-hero-social pb-90 wow tpfadeUp" data-wow-duration=".7s" data-wow-delay=".9s">
@@ -412,75 +417,31 @@ const HomePage = () => {
             </div>
             {/* creative-area-end */}
             <div className="container ss-how-work" id="how-it-works">
-                <div className="row">
-                    <div className="col-lg-6 col-md-12 col-12">
-                        <div className="tp-service-section-box mb-30 wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
+                <div className="row justify-content-center">
+                    <div className="col-xl-8 col-lg-10">
+                        <div className="tp-service-section-box text-center ss-how-work__head wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".6s">
                             <h5 className="tp-subtitle pb-10">How We Work</h5>
-                            <h2 className="tp-title">We guide you from idea to launch, step by step</h2>
-                            <Link className="tp-btn" to="/service-details/">View All Services</Link>
+                            <h2 className="tp-title">Simple 3-step workflow to launch faster</h2>
                         </div>
                     </div>
-                    <div className="col-12 d-md-none">
-                        <div className="ss-how-work-mobile-grid">
-                            {HOW_WE_WORK_MOBILE_ITEMS.map((item) => (
-                                <article className="ss-how-work-mobile-card" key={item.step}>
-                                    <span className="ss-how-work-mobile-card__step">{item.step}</span>
-                                    <h4>{item.title}</h4>
+                </div>
+                <div className="row ss-how-work-grid">
+                    {HOW_WE_WORK_STEPS.map((item, idx) => (
+                        <div className="col-xl-4 col-lg-4 col-md-6" key={item.step}>
+                            <div className="tp-sv-border-effect ss-how-work-border wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".2s">
+                                <article className={`tp-service-item-four sv-color-${idx + 1} mb-30 ss-how-work-item`}>
+                                    <div className="tp-service-item-four__img mb-30">
+                                        <i className={item.icon}></i>
+                                    </div>
+                                    <div className="tp-service-item-four__title">
+                                        <span className="ss-how-work-item__step">Step {item.step}</span>
+                                        <h3 className="tp-sv-sm-title">{item.title}</h3>
+                                    </div>
+                                    <p className="ss-how-work-item__desc">{item.desc}</p>
                                 </article>
-                            ))}
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-12 col-12 d-none d-md-block">
-                        <div className="tp-sv-box wow tpfadeUp" data-wow-duration=".5s" data-wow-delay=".8s">
-                            <div className="tp-service-item d-flex mb-30">
-                                <div className="tp-sv-img">
-                                    <img src="/img/service/service-1.png" alt="" />
-                                </div>
-                                <div className="tp-sv-content pl-60">
-                                    <h3 className="tp-sv-title mb-35"><Link to="/Initial_Consultation/">Initial Consultation</Link></h3>
-                                    <p className="mb-30">Tell us about your business — or let us call you. We'll understand what you need, spot what's holding you back, and plan the best way forward.</p>
-                                    <p>No tech talk, no confusion. Just a simple conversation about how we can help you grow.</p>
-                                    <div className="tp-sv-link mt-35">
-                                        <Link to="/Initial_Consultation/"><i className="far fa-arrow-right"></i> Learn More</Link>
-                                    </div>
-                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-lg-6 col-md-12 col-12 d-none d-md-block">
-                        <div className="tp-sv-box wow tpfadeUp" data-wow-duration=".7s" data-wow-delay="1s">
-                            <div className="tp-service-item d-flex mb-30">
-                                <div className="tp-sv-img">
-                                    <img src="/img/service/service-2.png" alt="" />
-                                </div>
-                                <div className="tp-sv-content pl-60">
-                                    <h3 className="tp-sv-title mb-35"><Link to="/second_Consultation/">Design & Development</Link></h3>
-                                    <p className="mb-30">Our designers and developers work together to build exactly what your business needs. We keep refining until you love every detail.</p>
-                                    <p>You stay in the loop at every step — nothing gets finalized until you're 100% happy.</p>
-                                    <div className="tp-sv-link mt-35">
-                                        <Link to="/second_Consultation/"><i className="far fa-arrow-right"></i> Learn More</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6 col-md-12 col-12 d-none d-md-block">
-                        <div className="tp-sv-box wow tpfadeUp" data-wow-duration=".9s" data-wow-delay="1.2s">
-                            <div className="tp-service-item d-flex mb-30">
-                                <div className="tp-sv-img">
-                                    <img src="/img/service/service-3.png" alt="" />
-                                </div>
-                                <div className="tp-sv-content pl-60">
-                                    <h3 className="tp-sv-title mb-35"><Link to="/third_Consultation/">Digital Marketing & Launch</Link></h3>
-                                    <p className="mb-30">We handle digital marketing and product launches with a focus on results. You get a 7-day unlimited trial to ensure you’re happy with the final product.</p>
-                                    <p>Our goal is your satisfaction, and we don’t stop until you’re pleased with the outcome.</p>
-                                    <div className="tp-sv-link mt-35">
-                                        <Link to="/third_Consultation/"><i className="far fa-arrow-right"></i> Learn More</Link>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    ))}
                 </div>
             </div>
 
@@ -490,24 +451,19 @@ const HomePage = () => {
                     <img src="/img/hero/hero-shape-4.png" alt="" />
                 </div>
                 <div className="container">
-                    <div className="row ss-home-testi-top align-items-end">
-                        <div className="col-xl-5 col-lg-5">
-                            <div className="tp-testimonial-title-box">
+                    <div className="row ss-home-testi-top">
+                        <div className="col-xl-12">
+                            <div className="tp-testimonial-title-box ss-video-gallery-head text-center text-lg-start">
                                 <h5 className="tp-subtitle">Testimonials</h5>
-                                <h2 className="tp-title-sm">Hear from our
+                                <h2 className="tp-title-sm">Video
                                     <span className="tp-section-highlight">
-                                        happy clients
-                                        <svg width="212" height="11" viewBox="0 0 212 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M0 0L212 11H0V0Z" fill="#FFDC60" />
+                                        gallery
+                                        <svg width="150" height="11" viewBox="0 0 150 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0L150 11H0V0Z" fill="#FFDC60" />
                                         </svg>
                                     </span>
                                 </h2>
-                                <div className="tp-testi-button-right-side mt-25">
-                                    <Link className="tp-btn" to="/testimonial/">More Testimonials</Link>
-                                </div>
                             </div>
-                        </div>
-                        <div className="col-xl-7 col-lg-7">
                             <div className="ss-video-carousel-wrap">
                                 <div className="ss-video-carousel-nav">
                                     <button className="ss-video-arrow ss-video-prev" type="button" aria-label="Previous video">
@@ -554,7 +510,25 @@ const HomePage = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="tp-testimonial-slider-section-four">
+                    <div className="row ss-text-testi-head">
+                        <div className="col-xl-12">
+                            <div className="tp-testimonial-title-box text-center text-lg-start">
+                                <h5 className="tp-subtitle">Text Testimonials</h5>
+                                <h2 className="tp-title-sm">Hear from our
+                                    <span className="tp-section-highlight">
+                                        happy clients
+                                        <svg width="212" height="11" viewBox="0 0 212 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M0 0L212 11H0V0Z" fill="#FFDC60" />
+                                        </svg>
+                                    </span>
+                                </h2>
+                                <div className="tp-testi-button-right-side mt-25">
+                                    <Link className="tp-btn" to="/testimonial/">More Testimonials</Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="tp-testimonial-slider-section-four ss-text-testimonial-wrap">
                         <div className="swiper-container testi-slider-active-five">
                             <div className="swiper-wrapper">
 
@@ -722,7 +696,7 @@ const HomePage = () => {
             {/* testimonial-area-end */}
 
             {/* news-area-start */}
-            <div className="tp-news-letter-area tp-news-letter-bg pt-130 pb-130" style={{ backgroundImage: `url(/img/news/news-bg.jpg)` }}>
+            <div className="tp-news-letter-area tp-news-letter-bg pt-130 pb-130 ss-home-newsletter" style={{ backgroundImage: `url(/img/news/news-bg.jpg)` }}>
                 <div className="container">
                     <div className="row align-items-center wow tpfadeUp" data-wow-duration=".3s" data-wow-delay=".5s">
                         <div className="col-xl-7 col-lg-7 col-md-12">
