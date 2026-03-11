@@ -633,6 +633,10 @@ header.ss-nav-wrap {
 }
 
 @media (max-width: 767px) {
+    .tp-creative-item {
+        padding: 40px 7px !important;
+    }
+
     .ss-home-chose {
         padding-top: 30px !important;
         padding-bottom: 30px !important;
