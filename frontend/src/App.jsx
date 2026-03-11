@@ -24,6 +24,7 @@ const LoginPage = React.lazy(() => import('./pages/LoginPage'));
 const RegistrationPage = React.lazy(() => import('./pages/RegistrationPage'));
 const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 const LocationPage = React.lazy(() => import('./pages/LocationPage'));
+const BdePage = React.lazy(() => import('./pages/BdePage'));
 
 // Wrap lazy loading with a suspense boundary
 const SuspenseWrapper = ({ children }) => (
@@ -56,6 +57,7 @@ function App() {
           <Route path="/service-3/" element={<SuspenseWrapper><Service3Page /></SuspenseWrapper>} />
           <Route path="/login/" element={<SuspenseWrapper><LoginPage /></SuspenseWrapper>} />
           <Route path="/registration/" element={<SuspenseWrapper><RegistrationPage /></SuspenseWrapper>} />
+          <Route path="/bde/" element={<SuspenseWrapper><BdePage /></SuspenseWrapper>} />
           {/* SEO Location Pages */}
           <Route path="/web-development-:city/" element={<SuspenseWrapper><LocationPage /></SuspenseWrapper>} />
           <Route path="*" element={<SuspenseWrapper><NotFoundPage /></SuspenseWrapper>} />
