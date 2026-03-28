@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap');
+
+.bde-docs-root {
+    font-family: 'Nunito Sans', 'Segoe UI', sans-serif;
+    color: #2f261e;
+}
+
+.bde-theme-light {
+    background:
+        radial-gradient(circle at top left, rgba(251, 191, 36, 0.08), transparent 20%),
+        radial-gradient(circle at top right, rgba(56, 189, 248, 0.08), transparent 22%),
+        linear-gradient(180deg, #f8f3ea 0%, #fbf8f2 45%, #f6efe2 100%);
+}
+
+.bde-theme-dark {
+    color: #e5eefb;
+    background:
+        radial-gradient(circle at top left, rgba(34, 211, 238, 0.12), transparent 18%),
+        radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.16), transparent 24%),
+        linear-gradient(180deg, #020617 0%, #061120 42%, #0b1730 100%);
+}
+
+.bde-docs-title {
+    font-family: 'Caveat', 'Segoe Print', 'Bradley Hand', cursive;
+    letter-spacing: 0.01em;
+}
+
+.bde-docs-scroll {
+    scrollbar-width: thin;
+    scrollbar-color: #d5c6ab transparent;
+}
+
+.bde-docs-scroll::-webkit-scrollbar {
+    width: 8px;
+}
+
+.bde-docs-scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.bde-docs-scroll::-webkit-scrollbar-thumb {
+    background: #d5c6ab;
+    border-radius: 999px;
+}
+
+.bde-lock-shell {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at top left, rgba(103, 232, 249, 0.2), transparent 26%),
+        radial-gradient(circle at top right, rgba(96, 165, 250, 0.22), transparent 30%),
+        radial-gradient(circle at bottom center, rgba(192, 132, 252, 0.18), transparent 28%),
+        linear-gradient(135deg, #07111f 0%, #0d1728 48%, #14182e 100%);
+}
+
+.bde-lock-orb {
+    position: absolute;
+    border-radius: 999px;
+    filter: blur(10px);
+    opacity: 0.7;
+    animation: bdeFloat 14s ease-in-out infinite;
+}
+
+.bde-lock-orb-one {
+    top: 12%;
+    left: 10%;
+    height: 220px;
+    width: 220px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.4), rgba(56, 189, 248, 0));
+}
+
+.bde-lock-orb-two {
+    right: 12%;
+    top: 18%;
+    height: 280px;
+    width: 280px;
+    background: radial-gradient(circle, rgba(129, 140, 248, 0.34), rgba(129, 140, 248, 0));
+    animation-delay: -4s;
+}
+
+.bde-lock-orb-three {
+    bottom: 10%;
+    left: 50%;
+    height: 260px;
+    width: 260px;
+    transform: translateX(-50%);
+    background: radial-gradient(circle, rgba(244, 114, 182, 0.2), rgba(244, 114, 182, 0));
+    animation-delay: -8s;
+}
+
+.bde-lock-card {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.08));
+    box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.bde-lock-ring {
+    background:
+        radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0, rgba(255, 255, 255, 0.02) 55%, transparent 56%),
+        linear-gradient(135deg, rgba(125, 211, 252, 0.18), rgba(168, 85, 247, 0.15));
+}
+
+.bde-quote-card {
+    position: relative;
+    background:
+        linear-gradient(130deg, rgba(3, 15, 31, 0.98) 0%, rgba(5, 25, 45, 0.98) 55%, rgba(7, 34, 60, 0.96) 100%);
+}
+
+.bde-quote-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.16), transparent 18%),
+        radial-gradient(circle at 70% 75%, rgba(59, 130, 246, 0.12), transparent 20%);
+    pointer-events: none;
+}
+
+.bde-quote-shape {
+    position: absolute;
+    inset: auto;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.bde-quote-shape-one {
+    top: -2%;
+    right: 10%;
+    width: 34%;
+    height: 128%;
+    background: rgba(18, 39, 61, 0.9);
+    clip-path: polygon(24% 0, 100% 0, 52% 100%, 0 100%);
+}
+
+.bde-quote-shape-two {
+    right: -8%;
+    bottom: 0;
+    width: 28%;
+    height: 66%;
+    background: rgba(154, 230, 255, 0.14);
+    clip-path: polygon(40% 0, 100% 0, 58% 100%, 0 100%);
+}
+
+.bde-quote-shape-three {
+    right: 7%;
+    bottom: 0;
+    width: 22%;
+    height: 45%;
+    background: rgba(255, 255, 255, 0.08);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+@keyframes bdeFloat {
+    0%, 100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    50% {
+        transform: translate3d(0, -18px, 0) scale(1.04);
+    }
+}

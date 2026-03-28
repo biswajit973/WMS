@@ -7,6 +7,7 @@ import QuickContact from './QuickContact';
 
 const Layout = ({ children }) => {
     const location = useLocation();
+    const isHandbookRoute = location.pathname.startsWith('/bde');
 
     useEffect(() => {
         // Scroll to top on route change
@@ -15,23 +16,23 @@ const Layout = ({ children }) => {
         // Re-initialize jQuery plugins if they exist globally
         // We delay slightly to allow DOM to render
         const timer = setTimeout(() => {
-            if (window.jQuery && window.collaxInitPlugins) {
+            if (!isHandbookRoute && window.jQuery && window.collaxInitPlugins) {
                 window.collaxInitPlugins(window.jQuery);
             }
         }, 100);
 
         return () => clearTimeout(timer);
-    }, [location.pathname]);
+    }, [isHandbookRoute, location.pathname]);
 
     return (
         <>
-            <Navbar />
+            {!isHandbookRoute && <Navbar />}
             <main>
                 {children}
             </main>
-            <Footer />
+            {!isHandbookRoute && <Footer />}
             <ScrollToTop />
-            <QuickContact />
+            {!isHandbookRoute && <QuickContact />}
         </>
     );
 };

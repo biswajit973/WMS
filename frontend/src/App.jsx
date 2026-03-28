@@ -57,7 +57,7 @@ function App() {
           <Route path="/service-3/" element={<SuspenseWrapper><Service3Page /></SuspenseWrapper>} />
           <Route path="/login/" element={<SuspenseWrapper><LoginPage /></SuspenseWrapper>} />
           <Route path="/registration/" element={<SuspenseWrapper><RegistrationPage /></SuspenseWrapper>} />
-          <Route path="/bde/" element={<SuspenseWrapper><BdePage /></SuspenseWrapper>} />
+          <Route path="/bde/*" element={<SuspenseWrapper><BdePage /></SuspenseWrapper>} />
           {/* SEO Location Pages */}
           <Route path="/web-development-:city/" element={<SuspenseWrapper><LocationPage /></SuspenseWrapper>} />
           <Route path="*" element={<SuspenseWrapper><NotFoundPage /></SuspenseWrapper>} />
